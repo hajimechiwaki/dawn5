@@ -1,0 +1,105 @@
+{
+  "sections": {
+    "1635142182671ce15d": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"content article_header\">\n\t{%- if article.image -%}\n\t<div class=\"content_bg\">\n\t\t<img src=\"{{ article.image | img_url: 'master' }}\" class=\"lazyload bgimg\">\n\t<\/div>\n\t{%- endif -%}\n\t<div class=\"content_inner\">\n\t\t<div class=\"content_body -center\">\n\t\t\t<div class=\"article_header_labels\">\n\t\t\t\t<p class=\"article_header_labels_main\">{{ blog.title }}<\/p>\n\t\t\t\t{%- if article.tags -%}\n\t\t\t\t<p class=\"article_header_labels_sub\">\n\t\t\t\t{% for tag in article.tags %}{{ tag }}{% endfor %}\n\t\t\t\t<\/p>\n\t\t\t\t{%- endif -%}\n\t\t\t<\/div>\n\t\t\t<div class=\"article_header_titles\">\n\t\t\t\t<h1 class=\"article_header_titles_main\">{{ article.title | escape }}<\/h1>\n\t\t\t<\/div>\n\t\t\t<time class=\"article_header_date\">{{ article.published_at | time_tag: '%Y.%m.%d' }}<\/time>\n\t\t<\/div>\n\t<\/div>\n<\/div>"
+      }
+    },
+    "163515884849c2c4e5": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"content article_cols\">\n\t<div class=\"content_inner\">\n\t\t<div class=\"cols -middle -reverse -gather\">\n\t\t\t{%- if article.image -%}\n\t\t\t<div class=\"article_cols_img\">\n\t\t\t\t<figure class=\"img -r4x3 -cover\">\n\t\t\t\t\t<img src=\"{{ article.image | img_url: 'master' }}\" class=\"lazyload bgimg\">\n\t\t\t\t<\/figure> \n\t\t\t<\/div>\n\t\t\t{%- endif -%}\n\t\t\t<div class=\"article_cols_body -center\">\n\t\t\t\t<div class=\"article_cols_labels\">\n\t\t\t\t\t<p class=\"article_cols_labels_main\">{{ blog.title }}<\/p>\n\t\t\t\t\t{%- if article.tags -%}\n\t\t\t\t\t<p class=\"article_cols_labels_sub\">\n\t\t\t\t\t{% for tag in article.tags %}{{ tag }}{% endfor %}\n\t\t\t\t\t<\/p>\n\t\t\t\t\t{%- endif -%}\n\t\t\t\t<\/div>\n\t\t\t\t<div class=\"article_cols_titles\">\n\t\t\t\t\t<h1 class=\"article_cols_titles_main\">{{ article.title | escape }}<\/h1>\n\t\t\t\t<\/div>\n\t\t\t\t<time class=\"article_cols_date\">{{ article.published_at | time_tag: '%Y.%m.%d' }}<\/time>\n\t\t\t<\/div>\n\t\t\t\n\t\t<\/div>\n\t<\/div>\n<\/div>"
+      }
+    },
+    "1635158561ff60aaa7": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"content\">\n\t<div class=\"content_inner -narrow\">\n\t\t{{ article.content }}\n\t<\/div>\n<\/div>"
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content"
+      ],
+      "settings": {
+      }
+    },
+    "1645613124e5ed7442": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<hr>\n<div class=\"content\">\n\t<div class=\"content_inner\">\n\t\t<h2 class=\"content_title -center\">LATEST NEWS<\/h2>\n\t\t<div class=\"cols\">\n\t\t\t<div class=\"cols_news\">\n\t\t\t\t{% if blogs.news.articles %}\n\t\t\t\t<ul class=\"content_news\">\n\t\t\t\t  {% for article in blogs.news.articles limit:5  %}\n\t\t\t\t    <li>\n\t\t\t\t\t\t<a href=\"{{ article.url }}\">\n\t\t\t\t\t\t\t<div class=\"content_news_date\">{{ article.published_at | time_tag: '%Y.%m.%d' }}<\/div>\n\t\t\t\t\t\t\t{% if article.tags %}<div class=\"content_news_tag\">{% for tag in article.tags %}{{ tag }}{% endfor %}<\/div>{% endif %}\n\t\t\t\t\t\t\t<div class=\"content_news_title\">{{ article.title }}<\/div>\n\t\t\t\t\t\t<\/a>\n\t\t\t\t\t<\/li>\n\t\t\t\t  {% endfor %}\n\t\t\t\t<\/ul>\n\t\t\t\t{% else %}\n\t\t\t\t\t<p>まだニュースはありません。<\/p>\n\t\t\t\t{% endif %}\n\t\t\t<\/div>\n\t\t\t<!--<div class=\"cols_instagram\">\n\t\t\t\t<a href=\"https:\/\/www.instagram.com\/3tosaya\/\" target=\"_blank\">\n\t\t\t\t\t<img src=\"https:\/\/placehold.jp\/360x360.png\" width=\"180\" height=\"180\" alt=\"\">\n\t\t\t\t<\/a>\n\t\t\t<\/div>-->\n\t\t<\/div>\n\t<\/div>\n<\/div>"
+      }
+    },
+    "1635158767d54fc3d0": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<hr>\n<div class=\"content\">\n<div class=\"content_inner -large\">\n<div class=\"cols -has4\">\n\n<div>\n<p><a href=\"\/collections\/all\">SHOP<\/a><br>\n<a href=\"\/collections\/new-arrival\">NEW ARRIVAL \/ COMING SOON<\/a><br>\n<a href=\"\/collections\/eau-de-vie\">EAU DE VIE<\/a><br>\n<a href=\"\/collections\/tea\">TEA<\/a><br>\n<a href=\"\/collections\/jar\">JAR<\/a><br>\n<a href=\"\/collections\/dry-foods\">DRY FOODS<\/a><br>\n<a href=\"\/collections\/books\">BOOKS<\/a><br>\n<a href=\"\/collections\/product\">PRODUCT<\/a><br>\n<a href=\"\/collections\/friends\">FRIENDS<\/a><br>\n<!--<a href=\"\/collections\/food\">FOOD<\/a>--><\/p>\n<\/div>\n\n<div>\n<p>TASTE<br>\n<a href=\"\/pages\/visit\">VISIT<\/a><br>\n<a href=\"\/pages\/stories\">STORIES<\/a><br>\n<a href=\"\/pages\/join\">JOIN<\/a><br>\n<a href=\"\/pages\/about\">ABOUT<\/a><br>\n<a href=\"\/blogs\/news\">NEWS<\/a><br>\n<a href=\"\/pages\/contact\">CONTACT<\/a><\/p>\n<\/div>\n\n<div>\n<div data-lang=\"ja\" class=\"-git10\"><p>mitosaya薬草園蒸留所<\/p>\n<p>〒298-0216<br>千葉県夷隅郡大多喜町大多喜486<br>\ne-mail. <a href=\"mailto:cs@mitosaya.com\" target=\"_blank\">cs@mitosaya.com<\/a><br>\ntel. 0470 64 6041<\/p>\n<p><a href=\"https:\/\/www.instagram.com\/3tosaya\/\" target=\"_blank\">Instagram<\/a> | <a href=\"https:\/\/twitter.com\/3tosaya\" target=\"_blank\">Twitter<\/a> | <a href=\"https:\/\/www.facebook.com\/3tosaya\/\" target=\"_blank\">Facebook<\/a><\/p><\/div>\n<div data-lang=\"en\" class=\"-git10\"><p>mitosaya botanical distillery<\/p>\n<p>486 Otaki, Otaki-machi, Isumi-gun, Chiba 298-0216 Japan<br>\ne-mail. <a href=\"mailto:cs@mitosaya.com\" target=\"_blank\">cs@mitosaya.com<\/a><br>\ntel. +81(0)470 64 6041<\/p>\n<p><a href=\"https:\/\/www.instagram.com\/3tosaya\/\" target=\"_blank\">Instagram<\/a> | <a href=\"https:\/\/twitter.com\/3tosaya\" target=\"_blank\">Twitter<\/a> | <a href=\"https:\/\/www.facebook.com\/3tosaya\/\" target=\"_blank\">Facebook<\/a><\/p><\/div>\n<\/div>\n\n<div class=\"-center\">\n<a href=\"\/\"><figure class=\"-pad\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0552\/1044\/2922\/files\/logo_mitosaya_full_000_2x_23f7e5ba-61c2-4afa-8cb2-77b2647ebdd3_150x@2x.png\" alt=\"mitosaya\" width=\"200\" \/><\/figure><\/a><\/div>\n\n<\/div>\n<\/div>\n<\/div>"
+      }
+    },
+    "16455783695e91dda0": {
+      "type": "newsletter",
+      "blocks": {
+        "dc800304-c3ac-4998-82b7-457405c4575d": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Newsletter<\/p>"
+          }
+        },
+        "1645578369f5f0fe39-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "dc800304-c3ac-4998-82b7-457405c4575d",
+        "1645578369f5f0fe39-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "1635142182671ce15d",
+    "163515884849c2c4e5",
+    "1635158561ff60aaa7",
+    "main",
+    "1645613124e5ed7442",
+    "1635158767d54fc3d0",
+    "16455783695e91dda0"
+  ]
+}

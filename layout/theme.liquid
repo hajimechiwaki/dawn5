@@ -212,12 +212,40 @@
       document.documentElement.classList.add('shopify-design-mode');
     }
     </script>
+
+    {% comment %} mitosaya - add asset file {% endcomment %}
+    {{ 'apps.css' | asset_url | stylesheet_tag }}
+    {{ 'contents.css' | asset_url | stylesheet_tag }}
+    <script src="{{ 'jquery.min.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'apps.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'functions.js' | asset_url }}" defer="defer"></script>
+    {% comment %} / mitosaya - add asset file {% endcomment %}
+
   </head>
 
   <body class="gradient">
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">
       {{ "accessibility.skip_to_text" | t }}
     </a>
+
+{% comment %} mitosaya - add modal {% endcomment %}
+    <div id="modal_confirmination" class="modal modal_confirmination">
+      <div class="modal_confirmination_body">
+        <div class="modal_confirmination_title">
+          <img src="https://cdn.shopify.com/s/files/1/0552/1044/2922/files/logo_mitosaya_full_000_2x_23f7e5ba-61c2-4afa-8cb2-77b2647ebdd3.png?v=1631844753" alt="mitosaya">
+        </div>
+        <div class="modal_confirmination_text">
+          <div data-lang="ja">あなたはお住まいの国で<br>飲酒可能な年齢であり、<br>当社のクッキーと<br>プライバシーポリシーに<br>同意しますか？</div>
+          <div data-lang="en">Are you of legal drinking age <br>and do you accept <br>our cookie and privacy policy?</div>
+        </div>
+
+        <div class="modal_confirmination_btns">
+          <button id="modal_confirmination_btn_true" type="button" class="modal_confirmination_btn">YES</button>
+          <a href="http://newspaper.mitosaya.com" target="_blank" id="modal_confirmination_btn_false" class="modal_confirmination_btn">NO</a>
+        </div>
+      </div>
+    </div>
+{% comment %} / mitosaya - add modal {% endcomment %}
 
     {%- if settings.cart_type == 'drawer' -%}
       {%- render 'cart-drawer' -%}

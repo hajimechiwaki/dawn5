@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="{{ 'component-pagination.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-pagination.css' | asset_url | stylesheet_tag }}</noscript>
 
+
+{% comment %}
+
 {%- if paginate.parts.size > 0 -%}
   <div class="pagination-wrapper">
     <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
@@ -50,4 +53,39 @@
       </ul>
     </nav>
   </div>
+{%- endif -%}
+
+{% endcomment %}
+
+
+{%- if paginate.parts.size > 1 -%}
+
+    <div class="content_pagenation">
+      <ul class="pagination">
+        {%- if paginate.previous -%}
+          <li><a href="{{ paginate.previous.url }}" class="content_pagenation_arrow -prev">&lt;</a></li>
+        {%- else -%}
+        {%- endif -%}
+
+        {%- for part in paginate.parts -%}
+          {%- if part.is_link -%}
+            <li>
+              <a href="{{ part.url }}" class="content_pagenation_num">{{ part.title }}</a>
+            </li>
+          {%- else -%}
+            {%- if part.title == paginate.current_page -%}
+              <li class="-current"><span class="content_pagenation_num">{{ part.title }}</span></li>
+            {%- else -%}
+              <li><span class="content_pagenation_num -dot">{{ part.title }}</span></li>
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+
+        {%- if paginate.next -%}
+          <li><a href="{{ paginate.next.url }}" class="content_pagenation_arrow -next">&gt;</a></li>
+        {%- else -%}
+        {%- endif -%}
+      </ul>
+    </div>
+
 {%- endif -%}

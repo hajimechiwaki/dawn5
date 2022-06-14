@@ -1,3 +1,39 @@
+<div class="content -center background-{{ section.settings.background_style }}{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="content_inner -large">
+    {% if section.settings.title != blank %}
+    <h2 class="content_title">{{ section.settings.title | escape }}</h2>
+    {% endif %}
+    <div class="cols -has{{ section.blocks.size }}{% if section.settings.column_alignment == 'center' %} -gather{% endif %} cards"{% if section.settings.swipe_on_mobile %} data-spslide{% endif %}>
+      {%- for block in section.blocks -%}
+      <a{% if section.settings.button_link %} href="{{ section.settings.button_link }}"{% endif %} class="card">
+        {%- if block.settings.image != blank -%}
+        <div class="card_img img -cover {% if section.settings.image_ratio == 'adapt' %} -r3x2{% elsif section.settings.image_ratio == 'square' %} -r1x1{% elsif section.settings.image_ratio == 'portrait' %} -r2x3{% elsif section.settings.image_ratio == 'landscape' %} -r3x2{% endif %}">
+          <img data-src="{{ block.settings.image | img_url: '960x' }}" class="lazyload">
+        </div>
+        {%- endif -%}
+
+        <div class="card_info">
+          {%- if block.settings.title != blank -%}
+          <h3 class="card_title">{{ block.settings.title | escape }}</h3>
+          {%- endif -%}
+          {%- if block.settings.text != blank -%}
+          <div class="card_text">{{ block.settings.text }}</div>
+          {%- endif -%}
+        </div>
+
+        {%- if section.settings.button_label != blank and section.settings.button_link -%}
+        <div class="btn">
+          <span>{{ section.settings.button_label }}</span>
+        </div>
+        {%- endif -%}
+      </a>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% comment %}
+
 {{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
@@ -50,12 +86,7 @@
           endfor
         -%}
         {%- for block in section.blocks -%}
-          {%- assign empty_column = '' -%}
-          {%- if block.settings.image == blank and block.settings.title == blank and block.settings.text == blank and block.settings.link_label == blank -%}
-            {%- assign empty_column = ' multicolumn-list__item--empty' -%}
-          {%- endif -%}
-
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}" {{ block.shopify_attributes }}>
             <div class="multicolumn-card content-container">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
@@ -123,6 +154,8 @@
     </div>
   </div>
 </div>
+
+{% endcomment %}
 
 {% schema %}
 {

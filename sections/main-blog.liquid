@@ -1,3 +1,17 @@
+<div class="content">
+  <div class="content_inner -large">
+    <h1 class="content_title -center">{{ blog.title | escape }}</h1>
+    <div class="cols cards -has3{% if section.settings.layout == 'collage' %} -collage{% endif %}">
+      {%- for article in blog.articles -%}
+        {%- render 'article-card', article: article, image_height: section.settings.image_height, show_image: section.settings.show_image, show_date: section.settings.show_date, show_author: section.settings.show_author -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+
+{% comment %}
+
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
@@ -41,6 +55,8 @@
     {%- endif -%}
   </div>
 {%- endpaginate -%}
+
+{% endcomment %}
 
 {% schema %}
 {

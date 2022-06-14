@@ -4,6 +4,14 @@
 <noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
 
+<div class="content">
+  <div class="content_inner -page">
+    {{ page.content }}
+  </div>
+</div>
+
+{% comment %} 
+
 {%- style -%}
   .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
@@ -26,6 +34,8 @@
     {{ page.content }}
   </div>
 </div>
+
+{% endcomment %}
 
 {% schema %}
 {

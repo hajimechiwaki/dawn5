@@ -10,7 +10,7 @@ $(function(){
   var confirm = $.cookie('mitosaya_confirmination');
   var url = location.href;
   $('#modal_confirmination').addClass('-init');
-  if(!confirm || url.indexOf('privacy-policy') == -1){
+  if(!confirm && url.indexOf('privacy-policy') == -1){
     $('#modal_confirmination').addClass('-show');
   }
 

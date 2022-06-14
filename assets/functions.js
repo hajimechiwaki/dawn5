@@ -8,12 +8,12 @@
 $(function(){
 
   var confirm = $.cookie('mitosaya_confirmination');
-  $(window).on('load',function(){
-    $('#modal_confirmination').addClass('-init');
-    if(!confirm){
-      $('#modal_confirmination').addClass('-show');
-    }
-  })
+  var url = location.href;
+  $('#modal_confirmination').addClass('-init');
+  if(!confirm || url.indexOf('privacy-policy') == -1){
+    $('#modal_confirmination').addClass('-show');
+  }
+
 
 
   $('#modal_confirmination_btn_true').on('click',function(){

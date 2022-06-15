@@ -95,7 +95,9 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": true,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
+    "checkout_body_background_color": "#eaf4f2",
+    "checkout_sidebar_background_color": "#eaf4f2",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",

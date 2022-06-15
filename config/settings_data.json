@@ -105,7 +105,7 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Welcome to our store",
+              "text": "WE SHIP WORLDWIDE \/ 世界中へ配送します",
               "color_scheme": "background-1",
               "link": ""
             }
@@ -121,7 +121,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo_width": 90,
+          "logo_width": 100,
           "logo_position": "middle-left",
           "menu": "main-menu",
           "menu_type_desktop": "dropdown",

@@ -21,7 +21,7 @@
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
-        "title": "Featured products",
+        "title": "",
         "heading_size": "h2",
         "collection": "new-arrival",
         "products_to_show": 12,

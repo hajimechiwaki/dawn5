@@ -1,17 +1,66 @@
 {
   "sections": {
+    "1655278841e9ee6408": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% assign product_title_def = product.title %}\n{%if request.locale.iso_code== 'en'%}\n  {% assign product_title = product.metafields.mitosaya_fields.title_en %}\n  {% assign product_title_sub = product.metafields.mitosaya_fields.subtitle_en %}\n{% else %}\n  {% assign product_title = product.metafields.mitosaya_fields.title_ja %}\n  {% assign product_title_sub = product.metafields.mitosaya_fields.subtitle_ja %}\n{%endif%}\n\n<div class=\"content product_header\">\n<div class=\"content_bg\">\n{% if product.metafields.mitosaya_fields.figure_youtube %}\n<iframe class=\"lazyload bgimg\" width=\"560\" height=\"315\" data-src=\"https:\/\/www.youtube.com\/embed\/{{ product.metafields.mitosaya_fields.figure_youtube }}\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen><\/iframe>\n\n{% elsif product.metafields.mitosaya_fields.figure_video %}\n<video preload=\"none\" data-autoplay loop playsinline muted class=\"lazyload bgimg\">\n<source type=\"video\/mp4\" src=\"{{ product.metafields.mitosaya_fields.figure_video | file_url }}\">\n<\/video>\n{% elsif product.metafields.mitosaya_fields.figure_image %}\n<img src=\"{{ product.metafields.mitosaya_fields.figure_image | file_url }}\" class=\"lazyload bgimg\">\n{% endif %}<\/div><div class=\"content_inner\">\n<div class=\"content_body -center\">\n<div class=\"product_header_labels\">\n<p class=\"product_header_labels_main\">SHOP<\/p>\n{% if product.collections %}\n<ul class=\"product_header_collections\">\n{% for collection in product.collections %}\n<li>{{ collection.title }}<\/li>\n{% endfor %}\n<\/ul>\n{% endif %}\n<\/div>\n{% if product.metafields.mitosaya_fields.summary %}\n<div class=\"product_header_summary\">\n{{ product.metafields.mitosaya_fields.summary | newline_to_br }}\n<\/div>\n{% endif %}\n<div class=\"product_header_titles\">\n<h1 class=\"product_header_titles_main\">{{ product_title }}<\/h1>\n{% if product_title_sub %}\n<p class=\"product_header_titles_sub\">{{ product_title_sub }}<\/p>\n{% endif %}\n<\/div>\n{% if product.metafields.mitosaya_fields.alcohol %}\n<p class=\"product_header_alcohol\">{{ product.metafields.mitosaya_fields.alcohol }}% vol<\/p>\n{% endif %}\n{% if product.variants %}\n<ul class=\"product_header_variants\">\n{% for variant in product.variants %}\n<li>{% if variant.title != 'Default Title' %}{{ variant.title }} {% endif %}{{ variant.price | money }}\n{% if variant.available %}{{ 'products.product.on_sale' | t }}{% else %}{{ 'products.product.sold_out' | t }}{% endif %}<\/li>\n{% endfor %}\n<\/ul>\n{% endif %}\n<\/div><\/div><\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "1655278855ab1f94df": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"content\">\n\t<div class=\"content_inner -narrow\">\n\t\t{% if product.media %}\n\t\t<div class=\"product_imgs\">\n\t\t{% for media in product.media %}\n\t\t  {% case media.media_type %}\n\t\t    {% when 'image' %}\n\t\t      <div class=\"product_imgs_item\">\n\t\t        <img src=\"{{ media | img_url: '1200x1200'}}\" alt=\"{{ media.alt }}\">\n\t\t       <\/div>\n\t\t    {% when 'external_video' %}\n\t\t      <div class=\"product_imgs_item -media\">\n\t\t        {{ media | external_video_tag }}\n\t\t      <\/div>\n\t\t    {% when 'video' %}\n\t\t      <div class=\"product_imgs_item -mov\">\n\t\t        {{ media | video_tag: controls: true }}\n\t\t      <\/div>\n\t\t    {% when 'model' %}\n\t\t      <div class=\"product_imgs_item -model\">\n\t\t        {{ media | model_viewer_tag }}\n\t\t      <\/div>\n\t\t  {% endcase %}\n\t\t{% endfor %}\n\t\t<\/div>\n\t\t{% endif %}\n\t<\/div>\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
+        "description": {
+          "type": "description",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
         "vendor": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "{{ product.vendor }}",
             "text_style": "uppercase"
           }
         },
         "title": {
-          "type": "title"
+          "type": "title",
+          "disabled": true,
+          "settings": {
+          }
         },
         "caption": {
           "type": "text",
@@ -20,29 +69,9 @@
             "text_style": "subtitle"
           }
         },
-        "price": {
-          "type": "price"
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "button"
-          }
-        },
-        "quantity_selector": {
-          "type": "quantity_selector"
-        },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": true
-          }
-        },
-        "description": {
-          "type": "description"
-        },
         "collapsible-row-0": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Materials",
             "icon": "leather",
@@ -52,6 +81,7 @@
         },
         "collapsible-row-1": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Shipping & Returns",
             "icon": "truck",
@@ -61,6 +91,7 @@
         },
         "collapsible-row-2": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Dimensions",
             "icon": "ruler",
@@ -70,6 +101,7 @@
         },
         "collapsible-row-3": {
           "type": "collapsible_tab",
+          "disabled": true,
           "settings": {
             "heading": "Care Instructions",
             "icon": "heart",
@@ -79,20 +111,21 @@
         },
         "share": {
           "type": "share",
+          "disabled": true,
           "settings": {
             "share_label": "Share"
           }
         }
       },
       "block_order": [
+        "description",
+        "variant_picker",
+        "price",
+        "quantity_selector",
+        "buy_buttons",
         "vendor",
         "title",
         "caption",
-        "price",
-        "variant_picker",
-        "quantity_selector",
-        "buy_buttons",
-        "description",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -104,111 +137,81 @@
         "gallery_layout": "stacked",
         "media_size": "large",
         "mobile_thumbnails": "hide",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
-        "padding_top": 36,
-        "padding_bottom": 12
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
+    "165527888022892c96": {
+      "type": "custom-liquid",
       "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "background_style": "none",
-        "button_label": "",
-        "button_link": "",
-        "swipe_on_mobile": false,
+        "custom_liquid": "{% comment %}\n\n{% for i in (1..10)%}\n{% if i < 10 %}\n{% assign num = 0 | append: i %}\n{% else; %}\n{% assign num = i %}\n{% endif; %}\n{% assign fieldname = 'product.metafields.mitosaya_fields.add_images_' | append: num %}\n{{ fieldname }}\n\n{% if fieldname %}\n<img src=\"{{ fieldname | file_url }}\" class=\"lazyload bgimg\">\n{% endif %}\n\n\n{% endfor %}\n\n{% endcomment %}\n\n<div class=\"content\">\n\t<div class=\"content_inner\">\n\t\t<div id=\"product_imgs\" class=\"content_tile\" data-tile>\n\n{% if product.metafields.mitosaya_fields.add_video_01 %}\n<div class=\"tile_item\"><video controls playsinline><source src=\"{{ product.metafields.mitosaya_fields.add_video_01 | file_url }}\"><\/video><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_video_02 %}\n<div class=\"tile_item\"><video controls playsinline><source src=\"{{ product.metafields.mitosaya_fields.add_video_02 | file_url }}\"><\/video><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_01 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_01 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_02 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_02 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_03 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_03 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_04 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_04 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_05 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_05 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_06 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_06 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_07 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_07 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_08 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_08 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_09 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_09 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_10 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_10 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_11 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_11 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_12 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_12 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_13 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_13 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_14 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_14 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_15 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_15 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_16 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_16 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_17 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_17 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_18 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_18 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_19 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_19 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n{% if product.metafields.mitosaya_fields.add_images_20 %}\n<div class=\"tile_item\"><img src=\"{{ product.metafields.mitosaya_fields.add_images_20 | file_url }}\" class=\"lazyload\"><\/div>\n{% endif %}\n\n\t\t<\/div>\n\t<\/div>\n<\/div>",
         "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
+        "heading": "Reccomend",
         "heading_size": "h2",
+        "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "background-1",
-        "image_ratio": "square",
-        "show_secondary_image": true,
+        "image_ratio": "portrait",
+        "show_secondary_image": false,
         "show_vendor": false,
         "show_rating": false,
         "columns_mobile": "2",
-        "padding_top": 36,
-        "padding_bottom": 28
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "165527913538f9b943": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<hr>\n<div class=\"content\">\n<div class=\"content_inner -large\">\n<div class=\"cols -has4\">\n\n<div>\n<p><a href=\"\/collections\/all\">SHOP<\/a><br>\n<a href=\"\/collections\/new-arrival\">NEW ARRIVAL \/ COMING SOON<\/a><br>\n<a href=\"\/collections\/eau-de-vie\">EAU DE VIE<\/a><br>\n<a href=\"\/collections\/liqueur\">LIQUEUR<\/a><br>\n<a href=\"\/collections\/spirits\">SPIRITS<\/a><br>\n<a href=\"\/collections\/tea\">TEA<\/a><br>\n<a href=\"\/collections\/jar\">JAR<\/a><br>\n<a href=\"\/collections\/dry-foods\">DRY FOODS<\/a><br>\n<a href=\"\/collections\/books\">BOOKS<\/a><br>\n<a href=\"\/collections\/product\">PRODUCT<\/a><br>\n<a href=\"\/collections\/friends\">FRIENDS<\/a><br>\n<!--<a href=\"\/collections\/food\">FOOD<\/a>--><\/p>\n<\/div>\n\n<div>\n<p>TASTE<br>\n<a href=\"\/pages\/visit\">VISIT<\/a><br>\n<a href=\"\/pages\/stories\">STORIES<\/a><br>\n<a href=\"\/pages\/join\">JOIN<\/a><br>\n<a href=\"\/pages\/about\">ABOUT<\/a><br>\n<a href=\"\/blogs\/news\">NEWS<\/a><br>\n<a href=\"\/pages\/contact\">CONTACT<\/a><br>\n<a href=\"\/pages\/newsletter\">NEWSLETTER<\/a><br>\n<br>\n<a href=\"\/pages\/privacy-policy\">PRIVACY POLICY<\/a><\/p>\n<\/div>\n\n<div>\n<div data-lang=\"ja\" class=\"-git10\"><p>mitosaya薬草園蒸留所<\/p>\n<p>〒298-0216<br>千葉県夷隅郡大多喜町大多喜486<br>\ne-mail. <a href=\"mailto:cs@mitosaya.com\" target=\"_blank\">cs@mitosaya.com<\/a><br>\ntel. 0470 64 6041<\/p>\n<p><a href=\"https:\/\/www.instagram.com\/3tosaya\/\" target=\"_blank\">Instagram<\/a> | <a href=\"https:\/\/twitter.com\/3tosaya\" target=\"_blank\">Twitter<\/a> | <a href=\"https:\/\/www.facebook.com\/3tosaya\/\" target=\"_blank\">Facebook<\/a><\/p><\/div>\n<div data-lang=\"en\" class=\"-git10\"><p>mitosaya botanical distillery<\/p>\n<p>486 Otaki, Otaki-machi, Isumi-gun, Chiba 298-0216 Japan<br>\ne-mail. <a href=\"mailto:cs@mitosaya.com\" target=\"_blank\">cs@mitosaya.com<\/a><br>\ntel. +81(0)470 64 6041<\/p>\n<p><a href=\"https:\/\/www.instagram.com\/3tosaya\/\" target=\"_blank\">Instagram<\/a> | <a href=\"https:\/\/twitter.com\/3tosaya\" target=\"_blank\">Twitter<\/a> | <a href=\"https:\/\/www.facebook.com\/3tosaya\/\" target=\"_blank\">Facebook<\/a><\/p><\/div>\n<\/div>\n\n<div class=\"-center\">\n<a href=\"\/\"><figure class=\"-pad\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0552\/1044\/2922\/files\/logo_mitosaya_full_000_2x_23f7e5ba-61c2-4afa-8cb2-77b2647ebdd3_150x@2x.png\" alt=\"mitosaya\" width=\"200\" \/><\/figure><\/a><\/div>\n\n<\/div>\n<\/div>\n<\/div>",
+        "color_scheme": "background-1",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "165527923169625ae6": {
+      "type": "newsletter",
+      "blocks": {
+        "1655279231afcfa0d1-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>NEWLETTER<\/p>"
+          }
+        },
+        "1655279231afcfa0d1-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1655279231afcfa0d1-1",
+        "1655279231afcfa0d1-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
+    "1655278841e9ee6408",
+    "1655278855ab1f94df",
     "main",
-    "image-with-text",
-    "multicolumn",
-    "product-recommendations"
+    "165527888022892c96",
+    "product-recommendations",
+    "165527913538f9b943",
+    "165527923169625ae6"
   ]
 }

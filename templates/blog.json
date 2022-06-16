@@ -5,7 +5,7 @@
       "settings": {
         "layout": "grid",
         "show_image": true,
-        "image_height": "medium",
+        "image_height": "small",
         "show_date": false,
         "show_author": false,
         "padding_top": 0,
@@ -20,10 +20,37 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
+    },
+    "1655368145e156df3a": {
+      "type": "newsletter",
+      "blocks": {
+        "1655368145297adc60-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>NEWSLETTER<\/p>"
+          }
+        },
+        "1655368145297adc60-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "1655368145297adc60-1",
+        "1655368145297adc60-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
     }
   },
   "order": [
     "main",
-    "165527989636f8df70"
+    "165527989636f8df70",
+    "1655368145e156df3a"
   ]
 }

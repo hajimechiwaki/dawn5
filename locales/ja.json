@@ -245,7 +245,7 @@
       "taxes_included_and_shipping_policy_html": "税込み。<a href=\"{{ link }}\">配送料<\/a>は購入手続き時に計算されます。",
       "taxes_and_shipping_at_checkout": "税と配送料は購入手続き時に計算されます",
       "headings": {
-        "product": "商品",
+        "product": "Product",
         "price": "価格",
         "total": "合計",
         "quantity": "数量",
@@ -395,7 +395,7 @@
       "discount": "ディスカウント",
       "shipping": "配送",
       "tax": "税",
-      "product": "商品",
+      "product": "Product",
       "sku": "SKU",
       "price": "商品価格",
       "quantity": "数量",
@@ -812,12 +812,16 @@
     },
     "checkout": {
       "stock": {
-        "sold_out_label": "Out of Stock"
+        "sold_out_label": "Out of Stock",
+        "product_column_header": "Product"
       },
       "contact": {
         "email_label": "Email",
         "email_placeholder": "Email"
       }
+    },
+    "page_titles": {
+      "products": "Product"
     }
   }
 }

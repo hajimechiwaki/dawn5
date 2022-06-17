@@ -295,7 +295,7 @@
     }
   },
   "localization": {
-    "country_label": "国\/地域",
+    "country_label": "Country \/ Region",
     "language_label": "Language",
     "update_language": "言語を更新する",
     "update_country": "国\/地域を更新する"
@@ -327,7 +327,7 @@
       "address1": "住所1",
       "address2": "住所2",
       "city": "市",
-      "country": "国\/地域",
+      "country": "Country \/ Region",
       "province": "都道府県",
       "zip": "郵便番号",
       "phone": "電話番号",

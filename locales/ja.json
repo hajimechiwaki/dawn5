@@ -800,5 +800,15 @@
       "terms_of_sale": "",
       "terms_of_service": ""
     }
+  },
+  "shopify": {
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "On Sale",
+          "out_of_stock": "Out of Stock"
+        }
+      }
+    }
   }
 }

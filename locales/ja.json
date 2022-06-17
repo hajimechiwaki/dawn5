@@ -175,8 +175,8 @@
         "other": "{{ count }}個の商品"
       },
       "reset": "リセット",
-      "sort_button": "並び替え",
-      "sort_by_label": "並び替え: ",
+      "sort_button": "Sort",
+      "sort_by_label": "Sort: ",
       "to": "まで",
       "clear_filter": "絞り込みを削除する",
       "filter_selected_accessibility": "{{ type }} ({{ count }}件のフィルターを選択済み)",
@@ -512,7 +512,7 @@
         "sort_by": "",
         "sort_hide_options_accessibility_label": "",
         "sort_show_options_accessibility_label": "",
-        "sort_title": "",
+        "sort_title": "Sort",
         "sort": {
           "date": {
             "newest": "",

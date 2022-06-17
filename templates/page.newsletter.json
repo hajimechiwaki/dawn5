@@ -7,12 +7,21 @@
         "padding_bottom": 0
       }
     },
-    "form": {
-      "type": "contact-form",
+    "165527979523a04be8": {
+      "type": "newsletter",
+      "blocks": {
+        "16552797954cea9da5-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "16552797954cea9da5-2"
+      ],
       "settings": {
-        "heading": "",
-        "heading_size": "h1",
         "color_scheme": "background-1",
+        "full_width": true,
         "padding_top": 0,
         "padding_bottom": 0
       }
@@ -25,38 +34,11 @@
         "padding_top": 0,
         "padding_bottom": 0
       }
-    },
-    "165527979523a04be8": {
-      "type": "newsletter",
-      "blocks": {
-        "16552797954cea9da5-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>NEWSLETTER<\/p>"
-          }
-        },
-        "16552797954cea9da5-2": {
-          "type": "email_form",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "16552797954cea9da5-1",
-        "16552797954cea9da5-2"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
     }
   },
   "order": [
     "main",
-    "form",
-    "165527973443e387eb",
-    "165527979523a04be8"
+    "165527979523a04be8",
+    "165527973443e387eb"
   ]
 }

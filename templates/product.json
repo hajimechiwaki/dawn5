@@ -155,7 +155,7 @@
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "Reccomend",
+        "heading": "RECOMMEND",
         "heading_size": "h2",
         "products_to_show": 4,
         "columns_desktop": 4,

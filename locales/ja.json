@@ -28,7 +28,7 @@
         "tiktok": "TikTok"
       }
     },
-    "continue_shopping": "買い物を続ける",
+    "continue_shopping": "Continue Shopping",
     "pagination": {
       "label": "ページネーション",
       "page": "{{ number }}ページ",
@@ -414,7 +414,7 @@
       "title": "{{ shop }}で利用可能な{{ value }}のギフトカードです。",
       "subtext": "あなたのギフトカード",
       "gift_card_code": "ギフトカードコード",
-      "shop_link": "買い物を続ける",
+      "shop_link": "Continue Shopping",
       "remaining_html": "残高: {{ balance }}",
       "add_to_apple_wallet": "Apple Walletに追加する",
       "qr_image_alt": "QRコード: スキャンしてギフトカードにクーポンを使う",
@@ -818,6 +818,9 @@
       "contact": {
         "email_label": "Email",
         "email_placeholder": "Email"
+      },
+      "thank_you": {
+        "return_to_store_link_label": "Continue Shopping"
       }
     },
     "page_titles": {

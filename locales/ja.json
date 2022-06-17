@@ -230,7 +230,7 @@
       }
     },
     "cart": {
-      "title": "Cart",
+      "title": "Your Cart",
       "caption": "カートアイテム",
       "remove_title": "{{ title }}を削除する",
       "subtotal": "小計",

@@ -36,7 +36,7 @@
       "previous": "前のページ"
     },
     "search": {
-      "search": "検索"
+      "search": "Search"
     },
     "cart": {
       "view": "カートを見る ({{ count }})",
@@ -191,7 +191,7 @@
         "one": "{{ count }}件の結果",
         "other": "{{ count }}件の結果"
       },
-      "title": "検索結果",
+      "title": "Search Results",
       "page": "ページ",
       "products": "商品管理",
       "search_for": "「{{ terms }}」を検索",
@@ -824,7 +824,8 @@
       }
     },
     "page_titles": {
-      "products": "Product"
+      "products": "Product",
+      "search": "Search"
     }
   }
 }

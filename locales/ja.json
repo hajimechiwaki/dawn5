@@ -55,7 +55,7 @@
     }
   },
   "newsletter": {
-    "label": "メール",
+    "label": "Email",
     "success": "ご登録ありがとうございます",
     "button_label": "登録"
   },
@@ -87,7 +87,7 @@
       "moderated": "コメントは公開前に承認される必要があることにご注意ください。",
       "comment_form_title": "コメントを残す",
       "name": "名前",
-      "email": "メール",
+      "email": "Email",
       "message": "コメント",
       "post": "コメントを投稿する",
       "back_to_blog": "ブログに戻る",
@@ -206,7 +206,7 @@
     "contact": {
       "form": {
         "name": "名前",
-        "email": "メール",
+        "email": "Email",
         "phone": "電話番号",
         "comment": "コメント",
         "send": "送信する",
@@ -344,7 +344,7 @@
     "login_page": {
       "cancel": "キャンセル",
       "create_account": "アカウントを作成する",
-      "email": "メール",
+      "email": "Email",
       "forgot_password": "パスワードをお忘れですか?",
       "guest_continue": "続行",
       "guest_title": "ゲストとして続行する",
@@ -372,7 +372,7 @@
       "title": "アカウントを作成する",
       "first_name": "名",
       "last_name": "姓",
-      "email": "メール",
+      "email": "Email",
       "password": "パスワード",
       "submit": "作成する"
     },
@@ -660,7 +660,7 @@
         "company_card_section_accessibility_label": ""
       },
       "locations": {
-        "contact_email": "",
+        "contact_email": "Email",
         "contact_list_title": "",
         "contact_name": "",
         "contact_permissions": "",
@@ -813,6 +813,10 @@
     "checkout": {
       "stock": {
         "sold_out_label": "Out of Stock"
+      },
+      "contact": {
+        "email_label": "Email",
+        "email_placeholder": "Email"
       }
     }
   }

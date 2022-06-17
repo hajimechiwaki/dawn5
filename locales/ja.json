@@ -339,7 +339,7 @@
       "delete": "削除",
       "delete_confirm": "この住所を削除してもよろしいですか?"
     },
-    "log_in": "ログイン",
+    "log_in": "Login",
     "log_out": "ログアウト",
     "login_page": {
       "cancel": "キャンセル",
@@ -349,8 +349,8 @@
       "guest_continue": "続行",
       "guest_title": "ゲストとして続行する",
       "password": "パスワード",
-      "title": "ログイン",
-      "sign_in": "ログイン",
+      "title": "Login",
+      "sign_in": "Sign in",
       "submit": "送信"
     },
     "orders": {
@@ -820,7 +820,14 @@
         "email_placeholder": "Email"
       },
       "thank_you": {
-        "return_to_store_link_label": "Continue Shopping"
+        "return_to_store_link_label": "Continue Shopping",
+        "login": "Login"
+      },
+      "customer_account": {
+        "sign_in_link_label": "Login"
+      },
+      "payment": {
+        "credit_card_vaulting_sign_in_banner_button_label": "Login"
       }
     },
     "page_titles": {

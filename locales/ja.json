@@ -235,7 +235,7 @@
       "remove_title": "{{ title }}を削除する",
       "subtotal": "小計",
       "new_subtotal": "新しい小計",
-      "note": "注文に関する特別な指示・備考",
+      "note": "Comment \/ Memo",
       "checkout": "ご購入手続きへ",
       "empty": "カートは空です",
       "cart_error": "カートをアップデートするときにエラーが発生しました。もう一度お試しください。",

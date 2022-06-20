@@ -41,12 +41,12 @@
 select {
   display: block;
   width: 100%;
-  padding: 1.15rem 1.8rem;
+  padding: 1.15rem 2rem;
   font-size: 1.6rem;
   line-height: calc(1 + .5 / var(--font-body-scale));
   letter-spacing: .04rem;
   background-color: rgb(var(--color-background));
-  color: rgb(var(--color-foreground));
+  color: rgba(var(--color-foreground), 1);
   font-size: 1.6rem;
   width: 100%;
   box-sizing: border-box;

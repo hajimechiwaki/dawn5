@@ -67,6 +67,7 @@
 }
 
 .field[data-shopify-editor-block*="select"] select:focus {
+  outline-offset: 0;
   outline: 0!important;
   box-shadow: 0 0 0 calc(.1rem + var(--inputs-border-width)) rgba(var(--color-foreground));
 }

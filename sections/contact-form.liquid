@@ -275,7 +275,7 @@
                     name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                     {% if block.settings.check %} required="true" {% endif %}
                     >
-              <option value="">未選択</option>
+              <option value="">選択してください</option>
               {% if block.settings.label-one != blank %}
                 <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
               {% endif %}
@@ -293,6 +293,15 @@
               {% endif %}
               {% if block.settings.label-six != blank %}
                 <option value="{{ block.settings.label-six }}">{{ block.settings.label-six }}</option>
+              {% endif %}
+              {% if block.settings.label-seven != blank %}
+                <option value="{{ block.settings.label-seven }}">{{ block.settings.label-seven }}</option>
+              {% endif %}
+              {% if block.settings.label-eight != blank %}
+                <option value="{{ block.settings.label-eight }}">{{ block.settings.label-eight }}</option>
+              {% endif %}
+              {% if block.settings.label-nine != blank %}
+                <option value="{{ block.settings.label-nine }}">{{ block.settings.label-nine }}</option>
               {% endif %}
             </select>
           </div>
@@ -598,6 +607,24 @@
             "id": "label-six",
             "default": "オプション６",
             "label": "オプション６"
+          },
+          {
+            "type": "text",
+            "id": "label-seven",
+            "default": "オプション７",
+            "label": "オプション７"
+          },
+          {
+            "type": "text",
+            "id": "label-eight",
+            "default": "オプション８",
+            "label": "オプション８"
+          },
+          {
+            "type": "text",
+            "id": "label-nine",
+            "default": "オプション９",
+            "label": "オプション９"
           }
         ]
       },

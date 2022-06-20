@@ -278,7 +278,7 @@
                     {% if block.settings.check %} required="true" {% endif %}
                     >
               {%- comment -%} <option value="">選択してください</option>{%- endcomment -%}
-              <option value="">{{ block.settings.title }}{% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}</option>
+              <option value="">{{ block.settings.title }}{% if block.settings.check %} *{% endif %}</option>
               {% if block.settings.label-one != blank %}
                 <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
               {% endif %}

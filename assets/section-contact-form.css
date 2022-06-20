@@ -53,4 +53,5 @@ select {
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
+  outline: none;
 }

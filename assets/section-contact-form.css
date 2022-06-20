@@ -38,6 +38,10 @@
   }
 }
 
+.field[data-shopify-editor-block*="select"] {
+  background-color: #f00;
+}
+
 select {
   display: block;
   padding: 1.15rem 2rem;
@@ -51,5 +55,5 @@ select {
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
-  background-color: #f00;
+  background-color: transparent;
 }

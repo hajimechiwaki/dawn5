@@ -37,3 +37,7 @@
     grid-column-gap: 2rem;
   }
 }
+
+select {
+  border: 10px solid #f00;
+}

@@ -42,6 +42,14 @@
   background-color: #f00;
 }
 
+.field[data-shopify-editor-block*="select"] .icon-caret {
+  position: absolute;
+  content: "";
+  height: .6rem;
+  right: 1.5rem;
+  top: calc(50% - .2rem);
+}
+
 select {
   display: block;
   padding: 1.15rem 2rem;

@@ -62,7 +62,7 @@
                 aria-invalid="true"
                 aria-describedby="ContactForm-email-error"
               {% endif %}
-              placeholder="{{ 'templates.contact.form.email' | t }}"
+              placeholder="{{ block.settings.title }}"
             >
 
             <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">

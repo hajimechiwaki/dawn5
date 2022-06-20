@@ -9,9 +9,58 @@
     },
     "form": {
       "type": "contact-form",
+      "blocks": {
+        "dab0bb89-d4d6-44fb-8e69-8e4ea74a7d64": {
+          "type": "name",
+          "settings": {
+            "title": "名前",
+            "check": true
+          }
+        },
+        "763896cc-4570-4a8a-863d-841ba680ad9a": {
+          "type": "email",
+          "settings": {
+            "title": "メール",
+            "check": true
+          }
+        },
+        "fde25063-6096-43ee-97c6-269f04b3296e": {
+          "type": "telephone",
+          "settings": {
+            "title": "電話番号",
+            "check": false
+          }
+        },
+        "56d1d02e-b648-4a3a-884b-1f0cd2fc4f72": {
+          "type": "text",
+          "settings": {
+            "title": "会社名",
+            "check": false
+          }
+        },
+        "5e824a4f-ff37-486f-bb58-620864203879": {
+          "type": "select",
+          "settings": {
+            "title": "問い合わせ内容",
+            "check": false,
+            "label-one": "商品の内容について",
+            "label-two": "商品のご購入、お取り扱いについて",
+            "label-three": "公開日・イベントについて",
+            "label-four": "果物や植物の仕入れについて",
+            "label-five": "取材・撮影について",
+            "label-six": "採用について"
+          }
+        }
+      },
+      "block_order": [
+        "dab0bb89-d4d6-44fb-8e69-8e4ea74a7d64",
+        "763896cc-4570-4a8a-863d-841ba680ad9a",
+        "fde25063-6096-43ee-97c6-269f04b3296e",
+        "56d1d02e-b648-4a3a-884b-1f0cd2fc4f72",
+        "5e824a4f-ff37-486f-bb58-620864203879"
+      ],
       "settings": {
         "heading": "",
-        "heading_size": "h1",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0

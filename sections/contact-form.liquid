@@ -380,27 +380,39 @@
       {
         "type": "name",
         "name": "お名前",
-        "limit": 1,
         "settings": [
           {
             "type": "text",
             "id": "title",
-            "label": "お名前",
+            "label": "名前",
             "default": "フルネーム",
             "info": "例：フルネーム"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
           }
         ]
       },
       {
         "type": "email",
         "name": "Eメール",
-        "limit": 1,
         "settings": [
           {
             "type": "text",
             "id": "title",
             "label": "ラベル",
             "default": "Eメール"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
           }
         ]
       },

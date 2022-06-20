@@ -50,7 +50,7 @@
   top: calc(50% - .2rem);
 }
 
-select {
+.field[data-shopify-editor-block*="select"] select {
   display: block;
   padding: 1.15rem 2rem;
   font-size: 1.6rem;
@@ -65,3 +65,8 @@ select {
   border-radius: var(--inputs-radius);
   background-color: transparent;
 }
+
+.field[data-shopify-editor-block*="select"] select:focus {
+  border: 1px solid #f00;
+}
+

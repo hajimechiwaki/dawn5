@@ -262,6 +262,7 @@
         {%- comment -%} セレクトボックス {%- endcomment -%}
         {% when 'select' %}
           <div class="field no-border colum" {{ block.shopify_attributes }}>
+           {%- comment -%} 
             {% if block.settings.title != blank %}
               <label for="Form-{{ section.id }}-{{ forloop.index0 }}"
                       class="custom-form__label label--block">
@@ -269,13 +270,15 @@
                 {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
               </label>
             {% endif %}
+            {%- endcomment -%}
 
             <select id="Form-{{ section.id }}-{{ forloop.index0 }}"
                     class="contactFormSelect"
                     name="contact[{{ block.settings.title | handleize | default: 'select' }}]"
                     {% if block.settings.check %} required="true" {% endif %}
                     >
-              <option value="">選択してください</option>
+              {%- comment -%} <option value="">選択してください</option>{%- endcomment -%}
+              <option value="">{{ block.settings.title }}{% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}</option>
               {% if block.settings.label-one != blank %}
                 <option value="{{ block.settings.label-one }}">{{ block.settings.label-one }}</option>
               {% endif %}

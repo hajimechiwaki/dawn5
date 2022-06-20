@@ -39,5 +39,6 @@
 }
 
 select {
-  border: 10px solid #f00;
+  display: block;
+  padding: 1.5rem;
 }

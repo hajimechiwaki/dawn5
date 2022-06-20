@@ -48,7 +48,17 @@
             "label-three": "公開日・イベントについて",
             "label-four": "果物や植物の仕入れについて",
             "label-five": "取材・撮影について",
-            "label-six": "採用について"
+            "label-six": "採用について",
+            "label-seven": "その他",
+            "label-eight": "",
+            "label-nine": ""
+          }
+        },
+        "5c68ad54-c39a-404f-ac8e-0e9b91de1329": {
+          "type": "textarea",
+          "settings": {
+            "title": "コメント",
+            "check": true
           }
         }
       },
@@ -57,7 +67,8 @@
         "763896cc-4570-4a8a-863d-841ba680ad9a",
         "fde25063-6096-43ee-97c6-269f04b3296e",
         "56d1d02e-b648-4a3a-884b-1f0cd2fc4f72",
-        "5e824a4f-ff37-486f-bb58-620864203879"
+        "5e824a4f-ff37-486f-bb58-620864203879",
+        "5c68ad54-c39a-404f-ac8e-0e9b91de1329"
       ],
       "settings": {
         "heading": "",

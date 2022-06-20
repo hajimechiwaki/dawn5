@@ -1,3 +1,18 @@
+<a href="{{ article.url }}" class="card" aria-labelledby="Article-{{ article.id }}">
+  <figure class="card_img img{% if image_height == 'small' %} -r3x2{% elsif image_height == 'medium' %} -r1x1{% elsif image_height == 'large' %} -r2x3{% endif %}  -cover">
+    {%- if show_image == true and article.image -%}
+      <img data-src="{{ article.image.src | img_url: '960x' }}" alt="{{ article.image.src.alt | escape }}" class="lazyload">
+    {%- endif -%}
+  </figure>
+  <div class="card_summary">
+    {% if article.tags %}<div class="card_label">{% for tag in article.tags %}{{ tag }}{% endfor %}</div>{% endif %}
+    {% if show_date %}<div class="card_date">{{- article.published_at | time_tag: '%Y.%m.%d' -}}</div>{% endif %}
+  </div>
+  <div class="card_body">
+    <h3 class="card_title -medium">{{ article.title | escape }}</h3>
+  </div>
+</a>
+
 {% comment %}
     Renders an article card for a given blog with settings to either show the image or not.
 
@@ -16,6 +31,7 @@
     {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
 {% endcomment %}
 
+{% comment %}
 {%- if article and article != empty -%}
   {%- liquid
     assign ratio = 1
@@ -138,3 +154,4 @@
     </div>
   </div>
 {%- endif -%}
+{% endcomment %}

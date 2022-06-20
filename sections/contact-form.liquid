@@ -67,7 +67,7 @@
 
             <label class="field__label" for="Form-{{ section.id }}-{{ forloop.index0 }}">
               {{ 'templates.contact.form.email' | t }}
-              <span aria-hidden="true">*</span>
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
             </label>
 
             {%- if form.errors contains 'email' -%}
@@ -93,7 +93,7 @@
           </textarea>
           <label class="form__label field__label" for="ContactForm-body">
             {{ 'templates.contact.form.comment' | t }}
-            <span aria-hidden="true">*</span>
+            {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
           </label>
         </div>
 
@@ -171,7 +171,7 @@
 
             <label class="field__label" for="ContactForm-name">
               {{ 'templates.contact.form.name' | t }}
-              <span aria-hidden="true">*</span>
+              {% if block.settings.check %}<span aria-hidden="true">*</span>{% endif %}
             </label>
           </div>
 

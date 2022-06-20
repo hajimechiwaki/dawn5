@@ -44,4 +44,13 @@ select {
   padding: 1.5rem;
   font-size: 1.6rem;
   border: 1px solid #f00;
+  line-height: calc(1 + .5 / var(--font-body-scale));
+  letter-spacing: .04rem;
+  background-color: rgb(var(--color-background));
+  color: rgb(var(--color-foreground));
+  font-size: 1.6rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: box-shadow var(--duration-short) ease;
+  border-radius: var(--inputs-radius);
 }

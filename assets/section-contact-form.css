@@ -43,7 +43,6 @@ select {
   width: 100%;
   padding: 1.5rem;
   font-size: 1.6rem;
-  border: 1px solid #f00;
   line-height: calc(1 + .5 / var(--font-body-scale));
   letter-spacing: .04rem;
   background-color: rgb(var(--color-background));

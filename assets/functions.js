@@ -84,6 +84,7 @@ $(function(){
         slickinit($('[data-spslide]'));
       }
   }
+  
 
   function slickinit(tgt){
     tgt.each(function(){

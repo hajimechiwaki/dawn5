@@ -42,7 +42,7 @@
           "type": "select",
           "settings": {
             "title": "問い合わせ内容",
-            "check": false,
+            "check": true,
             "label-one": "商品の内容について",
             "label-two": "商品のご購入、お取り扱いについて",
             "label-three": "公開日・イベントについて",

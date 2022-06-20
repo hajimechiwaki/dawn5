@@ -67,8 +67,7 @@
 }
 
 .field[data-shopify-editor-block*="select"] select:focus {
-  border: 1px solid #f00;
-  outline-offset: 0;
   outline: 0!important;
+  box-shadow: none;
 }
 

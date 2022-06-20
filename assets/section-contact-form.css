@@ -57,7 +57,7 @@ select {
   line-height: calc(1 + .5 / var(--font-body-scale));
   letter-spacing: .04rem;
   background-color: rgb(var(--color-background));
-  color: rgba(var(--color-foreground), 1);
+  color: rgba(var(--color-foreground),.75);
   font-size: 1.6rem;
   width: 100%;
   box-sizing: border-box;

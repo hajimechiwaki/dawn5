@@ -385,8 +385,8 @@
             "type": "text",
             "id": "title",
             "label": "名前",
-            "default": "フルネーム",
-            "info": "例：フルネーム"
+            "default": "名前",
+            "info": "例：名前"
           },
           {
             "type": "checkbox",
@@ -399,13 +399,13 @@
       },
       {
         "type": "email",
-        "name": "Eメール",
+        "name": "メール",
         "settings": [
           {
             "type": "text",
             "id": "title",
             "label": "ラベル",
-            "default": "Eメール"
+            "default": "メール"
           },
           {
             "type": "checkbox",
@@ -419,13 +419,19 @@
       {
         "type": "body",
         "name": "本文",
-        "limit": 1,
         "settings": [
           {
             "type": "textarea",
             "id": "title",
             "label": "ラベル",
             "default": "本文"
+          },
+          {
+            "type": "checkbox",
+            "id": "check",
+            "label": "必須にする",
+            "default": false,
+            "info": "チェックを入れると必須項目にできます。"
           }
         ]
       },

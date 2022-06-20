@@ -40,7 +40,6 @@
 
 select {
   display: block;
-  width: 100%;
   padding: 1.15rem 2rem;
   font-size: 1.6rem;
   line-height: calc(1 + .5 / var(--font-body-scale));
@@ -52,5 +51,5 @@ select {
   box-sizing: border-box;
   transition: box-shadow var(--duration-short) ease;
   border-radius: var(--inputs-radius);
-  outline: none;
+  background-color: #f00;
 }

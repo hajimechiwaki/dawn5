@@ -39,7 +39,6 @@
 }
 
 .field[data-shopify-editor-block*="select"] {
-  background-color: #f00;
 }
 
 .field[data-shopify-editor-block*="select"] .icon-caret {

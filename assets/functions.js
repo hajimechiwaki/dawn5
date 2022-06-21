@@ -48,6 +48,7 @@ $(function(){
     checkbp();
   })
 
+  
   $('[data-tile]').each(function(){
     var medias = $(this);
     medias.imagesLoaded().done( function( instance ) {

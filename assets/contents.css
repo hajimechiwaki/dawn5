@@ -1120,7 +1120,8 @@ img {
   margin-bottom: 7rem;
 }
 
-.content_tile .img {
+.content_tile .img,
+.content_tile video {
   width: 100%;
 }
 

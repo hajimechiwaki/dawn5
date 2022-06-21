@@ -51,6 +51,7 @@ $(function(){
   $('[data-tile]').each(function(){
     var medias = $(this);
     medias.imagesLoaded().done( function( instance ) {
+      alert('done');
         medias.masonry({
           itemSelector: '.tile_item'
         })

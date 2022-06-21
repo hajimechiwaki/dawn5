@@ -1593,6 +1593,10 @@ header-drawer {
   margin-top: 2rem;
 }
 
+.product_information .price>*+* {
+  margin-left: 1rem;
+}
+
 .product__tax {
   text-align: center;
   margin-top: .8rem;

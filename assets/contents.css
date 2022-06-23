@@ -1625,6 +1625,10 @@ header-drawer {
   margin-top: 1.6rem;
 }
 
+.cards .card_info {
+  text-align: center;
+}
+
 .cards .card_title.-large {
   font-size: 2rem;
 }

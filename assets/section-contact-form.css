@@ -38,11 +38,11 @@
   }
 }
 
-.field[data-shopify-editor-block*="select"] {
+.field.field_select {
   background-color: none;
 }
 
-.field[data-shopify-editor-block*="select"] .icon-caret {
+.field.field_select .icon-caret {
   position: absolute;
   content: "";
   height: .6rem;
@@ -50,7 +50,7 @@
   top: calc(50% - .2rem);
 }
 
-.field[data-shopify-editor-block*="select"] select {
+.field.field_select select {
   display: block;
   padding: 1.15rem 2rem;
   font-size: 1.6rem;
@@ -66,7 +66,7 @@
   background-color: transparent;
 }
 
-.field[data-shopify-editor-block*="select"] select:focus {
+.field.field_select select:focus {
   box-shadow: 0 0 0 calc(.1rem + var(--inputs-border-width)) rgba(var(--color-foreground))!important;
   outline: 0;
   border-radius: var(--inputs-radius);

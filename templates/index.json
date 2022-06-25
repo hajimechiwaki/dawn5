@@ -12,7 +12,7 @@
     "165527829480c1fcd3": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"content\">\n<div class=\"content_inner\">\n<h2 class=\"content_title -center\"><!--COMING SOON \/ <br class=\"-sp\">-->NEW ARRIVAL<\/h2>\n<!--<p class=\"-center\">May 29 10:00 a.m. on Sale<\/p>-->\n<\/div>\n<\/div>",
+        "custom_liquid": "<div class=\"content\">\n<div class=\"content_inner\">\n<h2 class=\"content_title -center\">COMING SOON \/ <br class=\"-sp\">NEW ARRIVAL<\/h2>\n<p class=\"-center\">June 26 10:00 a.m. on Sale<\/p>\n<\/div>\n<\/div>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0

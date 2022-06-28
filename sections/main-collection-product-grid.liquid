@@ -9,8 +9,6 @@
 
 <div id="ProductGridContainer">
 
-<<<<<<< Updated upstream
-=======
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
@@ -20,7 +18,6 @@
     </div>
   {%- endif -%}
 
->>>>>>> Stashed changes
   {%- paginate collection.products by section.settings.products_per_page -%}
     {%- if collection.products.size == 0 -%}
       <div class="content collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">

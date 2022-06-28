@@ -160,7 +160,7 @@
       "from": "から",
       "filter_and_sort": "Filter and Sort",
       "filter_by_label": "Filter:",
-      "filter_button": "絞り込む",
+      "filter_button": "Filter",
       "filters_selected": {
         "one": "{{ count }}個が選択されました",
         "other": "{{ count }}個が選択されました"

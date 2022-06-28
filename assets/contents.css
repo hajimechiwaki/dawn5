@@ -1304,13 +1304,13 @@ header-drawer {
 }
 
 #main-collection-filters {
-  position: relative;
-  z-index: 2;
+  /* position: relative;
+  z-index: 2; */
 }
 
 #ProductGridContainer {
-  position: relative;
-  z-index: 1;
+  /* position: relative;
+  z-index: 1; */
 }
 
 .spaced-section {

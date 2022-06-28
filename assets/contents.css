@@ -983,6 +983,11 @@ img {
   height: auto;
 }
 
+.content {
+  position: relative;
+  z-index: 1;
+}
+
 .content_inner {
   position: relative;
   width: 100%;
@@ -1288,6 +1293,7 @@ header-drawer {
 #MainContent {
   margin-top: 6rem;
   padding: 0 20px;
+  z-index: 10;
 }
 
 #shopify-section-footer {

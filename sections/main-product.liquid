@@ -23,7 +23,7 @@
   {%- endstyle -%}
 
   <p>発売日時：{{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
-  <p>現在日時：{{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d,%a'}}</p>
+  <p>現在日時：{{'now' | date: '%Y.%m.%d %H:%M'}}</p>
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 

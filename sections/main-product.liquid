@@ -25,11 +25,19 @@
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
   {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
   {% assign nowdate = 'now' %}
+  {% assign nowdate_s = 'now' | date: '%s' %}
+  {% if releasedate > nowdate %}
+  {% assign releasestatus = 'in Stock' %}
+  (% else %)
+  {% assign releasestatus = 'coming soon' %}
+  {% endif %}
 
 
 
-  <p>発売日時：{{ releasedate_s }} : {{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
-  <p>現在日時：{{'now' | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>発売日時：{{releasedate | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>現在日時：{{nowdate | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>販売状態：{{ releasestatus }}</p>
+
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 

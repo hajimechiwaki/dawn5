@@ -23,11 +23,12 @@
   {%- endstyle -%}
 
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
+  {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
   {% assign nowdate = 'now' %}
 
 
 
-  <p>発売日時：{{ releasedate }} : {{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>発売日時：{{ releasedate_s }} : {{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
   <p>現在日時：{{'now' | date: '%Y.%m.%d %H:%M'}}</p>
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>

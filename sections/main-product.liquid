@@ -31,7 +31,7 @@
     <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
   {%- endif -%}
 
- {product.mitosaya_fields.release_date}
+{{ product.mitosaya_fields.release_date }}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }}">
 

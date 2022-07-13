@@ -22,6 +22,9 @@
     }
   {%- endstyle -%}
 
+  <p>発売日時：{{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>現在日時：{{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d,%a'}}</p>
+
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
 
   {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
@@ -30,8 +33,6 @@
     <link id="ModelViewerStyle" rel="stylesheet" href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css" media="print" onload="this.media='all'">
     <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
   {%- endif -%}
-
-<p>発売日：{{ product.metafields.mitosaya_fields.release_date | date: '%Y/%m/%d,%a'}}</p>
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }}">
 

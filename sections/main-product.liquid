@@ -22,12 +22,10 @@
     }
   {%- endstyle -%}
 
-  {%
+  {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
+  {% assign nowdate = 'now' %}
 
-    assign releasedate = product.metafields.mitosaya_fields.release_date
-    assign nowdate = 'now'
 
-  %}
 
   <p>発売日時：{{ releasedate }} : {{ product.metafields.mitosaya_fields.release_date | date: '%Y.%m.%d %H:%M'}}</p>
   <p>現在日時：{{'now' | date: '%Y.%m.%d %H:%M'}}</p>

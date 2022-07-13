@@ -26,7 +26,7 @@
   {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
   {% assign nowdate = 'now' %}
   {% assign nowdate_s = 'now' | date: '%s' %}
-  {% if releasedate > nowdate %}
+  {% if releasedate_s < nowdate_s %}
   {% assign releasestatus = 'in Stock' %}
   (% else %)
   {% assign releasestatus = 'coming soon' %}

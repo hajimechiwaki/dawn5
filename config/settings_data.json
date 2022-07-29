@@ -108,9 +108,9 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "WE SHIP WORLDWIDE \/ 世界中へ配送します",
+              "text": "Recruit \/ スタッフ募集",
               "color_scheme": "background-1",
-              "link": ""
+              "link": "https:\/\/mitosaya.com\/pages\/recruit"
             }
           }
         },

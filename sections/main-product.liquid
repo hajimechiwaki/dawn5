@@ -24,6 +24,9 @@
 
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
   {% if releasedate != blank %}
+    {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
+    {% assign nowdate = 'now' %}
+    {% assign nowdate_s = 'now' | date: '%s' %}
     {% if releasedate_s < nowdate_s %}
       {% assign release_flg = 'ある' %}
     {% else %}
@@ -35,7 +38,20 @@
 
     <p>販売状態：{{release_flg}}</p>
 
+  {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
+  {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
+  {% assign nowdate = 'now' %}
+  {% assign nowdate_s = 'now' | date: '%s' %}
+  {% if releasedate = blank || releasedate_s < nowdate_s %}
+    {% assign release_flg = 'ある' %}
+  {% else %}
+    {% assign release_flg = 'ない' %}
+  {% endif %}
 
+
+  <p>発売日時：{{releasedate | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>現在日時：{{nowdate | date: '%Y.%m.%d %H:%M'}}</p>
+  <p>販売状態：{{release_flg}}</p>
 
 
 

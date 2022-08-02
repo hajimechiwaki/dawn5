@@ -41,7 +41,7 @@
 		{%- endif -%}
 		<p class="card_title_sub">{{ product_title_sub }}</p>
 
-    {%- if release_flg <= 0 -%}
+    {%- if release_flg > 0 -%}
       {%- if product_card_product.available == false -%}
         <p class="card_available">{{ 'products.product.sold_out' | t }}</p>
       {%- elsif product_card_product.available -%}

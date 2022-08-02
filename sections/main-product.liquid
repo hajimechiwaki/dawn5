@@ -439,7 +439,7 @@
                 </div>
               </div>
             </noscript>
-          {% if !release_flg %}
+          {% if release_flg = 0 %}
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">

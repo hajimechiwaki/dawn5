@@ -438,7 +438,6 @@
                 </div>
               </div>
             </noscript>
-          <p>販売状態：{{release_flg}}</p>
 
           {%- when 'buy_buttons' -%}
 
@@ -506,6 +505,8 @@
                 </pickup-availability>
               </div>
               <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+              {%- else -%}
+                ある
               {%- endif -%}
           
           {%- when 'rating' -%}

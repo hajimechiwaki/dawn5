@@ -28,10 +28,8 @@
   {% assign nowdate_s = 'now' | date: '%s' %}
   {% assign releaseFlg = 0 %}
   {% if releasedate_s == empty || releasedate_s < nowdate_s %}
-    {% assign releaseFlg = 1 %}
+    {% assign releaseFlg = 'hoge' %}
   {% endif %}
-
-hoge
 
 
   <p>発売日時：{{releasedate | date: '%Y.%m.%d %H:%M'}}</p>

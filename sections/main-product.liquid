@@ -482,7 +482,6 @@
                     </div>
                   {%- endform -%}
                 </product-form>
-                {%- endif -%}
 
                 {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 
@@ -504,6 +503,8 @@
                     </pickup-availability-preview>
                   </template>
                 </pickup-availability>
+
+                {%- endif -%}
               </div>
               <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           

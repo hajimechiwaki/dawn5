@@ -254,6 +254,11 @@
     {% section 'announcement-bar' %}
     {% section 'header' %}
     <main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+      {% if template == 'product' %}
+        商品
+      {% endif %}
+
+
       {{ content_for_layout }}
     </main>
 

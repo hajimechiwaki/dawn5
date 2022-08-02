@@ -23,7 +23,7 @@
   {%- endstyle -%}
 
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
-  {% if releasedate %}
+  {% if releasedate != blank %}
   aru
   {% else %}
   nai

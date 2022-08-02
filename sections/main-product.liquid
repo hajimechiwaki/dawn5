@@ -27,7 +27,7 @@
   {% assign nowdate = 'now' %}
   {% assign nowdate_s = 'now' | date: '%s' %}
   {% assign release_flg = 0 %}
-  {% if releasedate = blank or releasedate_s < nowdate_s %}
+  {% if releasedate = blank || releasedate_s < nowdate_s %}
     {% assign release_flg = 1 %}
   {% endif %}
 

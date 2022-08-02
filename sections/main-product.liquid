@@ -443,7 +443,7 @@
 
           {%- when 'buy_buttons' -%}
 
-            {%- if release_flg <= 0 -%}
+            {%- if release_flg > 0 -%}
               <div {{ block.shopify_attributes }}>
                 <product-form class="product-form">
                   <div class="product-form__error-message-wrapper" role="alert" hidden>

@@ -439,6 +439,7 @@
               </div>
             </noscript>
           <p>販売状態：{{release_flg}}</p>
+          {% if release_flg = 0 %}
           {%- when 'buy_buttons' -%}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">
@@ -504,6 +505,7 @@
             </div>
             
             <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
+          {% endif %}
           {%- when 'rating' -%}
             {%- if product.metafields.reviews.rating.value != blank -%}
               {% liquid

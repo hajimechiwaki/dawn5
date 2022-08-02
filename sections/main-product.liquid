@@ -22,19 +22,24 @@
     }
   {%- endstyle -%}
 
+
+  hogehoge
+
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
   {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
   {% assign nowdate = 'now' %}
   {% assign nowdate_s = 'now' | date: '%s' %}
   {% assign releaseFlg = 0 %}
   {% if releasedate_s == empty || releasedate_s < nowdate_s %}
-    {% assign releaseFlg = 'hoge' %}
+    {% assign releaseFlg = 1 %}
   {% endif %}
 
 
   <p>発売日時：{{releasedate | date: '%Y.%m.%d %H:%M'}}</p>
   <p>現在日時：{{nowdate | date: '%Y.%m.%d %H:%M'}}</p>
-  <p>販売状態：{{ releaseFlg }}</p>
+  <p>販売状態：{{releaseFlg}}</p>
+
+
 
 
   <script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>

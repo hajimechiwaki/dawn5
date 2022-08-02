@@ -26,10 +26,10 @@
   {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
   {% assign nowdate = 'now' %}
   {% assign nowdate_s = 'now' | date: '%s' %}
-  {% if releasedate = blank %}
-    {% assign release_flg = 1 %}
+  {% if releasedate = blank || releasedate_s < nowdate_s %}
+    {% assign release_flg = 'ある' %}
   {% else %}
-    {% assign release_flg = 0 %}
+    {% assign release_flg = 'ない' %}
   {% endif %}
 
 

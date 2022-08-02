@@ -441,8 +441,9 @@
           <p>販売状態：{{release_flg}}</p>
 
           {%- when 'buy_buttons' -%}
+
+              {%- if release_flg <= 0 -%}
               <div {{ block.shopify_attributes }}>
-                {%- if release_flg <= 0 -%}
                 <product-form class="product-form">
                   <div class="product-form__error-message-wrapper" role="alert" hidden>
                     <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-error" viewBox="0 0 13 13">
@@ -503,9 +504,8 @@
                     </pickup-availability-preview>
                   </template>
                 </pickup-availability>
-
-                {%- endif -%}
               </div>
+              {%- endif -%}
               <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
           
           {%- when 'rating' -%}

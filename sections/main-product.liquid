@@ -24,10 +24,16 @@
 
   {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
   {% if releasedate != blank %}
-  aru
+    {% if releasedate_s < nowdate_s %}
+      {% assign release_flg = 'ある' %}
+    {% else %}
+      {% assign release_flg = 'ない' %}
+    {% endif %}
   {% else %}
-  nai
+    {% assign release_flg = 'ある' %}
   {% endif %}
+
+    <p>販売状態：{{release_flg}}</p>
 
 
 

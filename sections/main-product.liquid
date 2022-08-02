@@ -445,10 +445,8 @@
             <div {{ block.shopify_attributes }}>
 
           {% if release_flg <= 0 %}
-          ない
-          {% else %}
-          ある
-          {% endif %}
+
+
 
               <product-form class="product-form">
                 <div class="product-form__error-message-wrapper" role="alert" hidden>
@@ -489,6 +487,8 @@
                   </div>
                 {%- endform -%}
               </product-form>
+
+          {% endif %}
 
               {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 

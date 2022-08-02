@@ -506,7 +506,9 @@
               </div>
               <script src="{{ 'pickup-availability.js' | asset_url }}" defer="defer"></script>
               {%- else -%}
-                ある
+                <div class="product_information_buy_ghost">
+                  <span>Coming Soon</span>
+                </div>
               {%- endif -%}
           
           {%- when 'rating' -%}

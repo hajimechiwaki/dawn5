@@ -440,10 +440,10 @@
             </noscript>
           <p>販売状態：{{release_flg}}</p>
           {%- when 'buy_buttons' -%}
-            {% if !relase_flg %}
-            ない
-            {% else %}
+            {% if relase_flg > 0 %}
             ある
+            {% else %}
+            ない
             {% endif %}
             <div {{ block.shopify_attributes }}>
               <product-form class="product-form">

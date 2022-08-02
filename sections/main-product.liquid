@@ -444,7 +444,7 @@
 
             <div {{ block.shopify_attributes }}>
 
-          {% if release_flg <= 0 %}
+          {%- if release_flg <= 0 -%}
 
 
 
@@ -488,7 +488,7 @@
                 {%- endform -%}
               </product-form>
 
-          {% endif %}
+          {%- endif -%}
 
               {{ 'component-pickup-availability.css' | asset_url | stylesheet_tag }}
 

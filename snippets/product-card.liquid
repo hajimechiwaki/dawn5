@@ -23,9 +23,6 @@
     {% assign release_flg = 1 %}
 {%- endif -%}
 
-{{ release_flg }}
-
-
 
 <a href="{{ product_card_product.url | default: '#' }}" class="card -center -halfround">
   {%- if show_vendor -%}
@@ -44,10 +41,14 @@
 		{%- endif -%}
 		<p class="card_title_sub">{{ product_title_sub }}</p>
 
-    {%- if product_card_product.available == false -%}
-      <p class="card_available">{{ 'products.product.sold_out' | t }}</p>
-    {%- elsif product_card_product.available -%}
-      <p class="card_available">{{ 'products.product.on_sale' | t }}</p>
+    {%- if release_flg <= 0 -%}
+      {%- if product_card_product.available == false -%}
+        <p class="card_available">{{ 'products.product.sold_out' | t }}</p>
+      {%- elsif product_card_product.available -%}
+        <p class="card_available">{{ 'products.product.on_sale' | t }}</p>
+      {%- endif -%}
+    {%- else -%}
+      <p class="card_available">Coming Soon</p>
     {%- endif -%}
 	</div>
 

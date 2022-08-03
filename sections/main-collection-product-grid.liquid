@@ -40,6 +40,8 @@
           <div class="cols cards -has4" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
 
+            <p>{{ product.title }}</p>
+
                 {% render 'product-card',
                   product_card_product: product,
                   media_size: section.settings.image_ratio,

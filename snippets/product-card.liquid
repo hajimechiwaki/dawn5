@@ -23,6 +23,8 @@
     {% assign release_flg = 1 %}
 {%- endif -%}
 
+{{ release_flg }}
+
 
 <a href="{{ product_card_product.url | default: '#' }}" class="card -center -halfround">
   {%- if show_vendor -%}

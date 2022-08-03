@@ -40,23 +40,6 @@
           <div class="cols cards -has4" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
 
-  {% assign releasedate = product_card_product.metafields.mitosaya_fields.release_date %}
-  hoge:{{ releasedate }}
-  {%- if releasedate != blank -%}
-    {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
-    {% assign nowdate = 'now' %}
-    {% assign nowdate_s = 'now' | date: '%s' %}
-    {%- if releasedate_s < nowdate_s -%}
-      {% assign release_flg = 1 %}
-    {%- else -%}
-      {% assign release_flg = 0 %}
-    {%- endif -%}
-  {%- else -%}
-    {% assign release_flg = 1 %}
-  {%- endif -%}
-
-  {{ release_flg }}
-
                 {% render 'product-card',
                   product_card_product: product,
                   media_size: section.settings.image_ratio,

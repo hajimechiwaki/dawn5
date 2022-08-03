@@ -24,7 +24,7 @@
   endif
 -%}
 
-{{ results | json }}
+{{ collection | json }}
 {{ results.rules | json }}
 
 <div class="facets-container{% if filter_type == 'drawer' %} facets-container-drawer{% endif %}">

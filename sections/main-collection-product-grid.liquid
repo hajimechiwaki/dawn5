@@ -40,7 +40,22 @@
           <div class="cols cards -has4" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
 
-            <p>{{ product.title }}</p>
+              {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
+              {%- if releasedate != blank -%}
+                {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}
+                {% assign nowdate = 'now' %}
+                {% assign nowdate_s = 'now' | date: '%s' %}
+                {%- if releasedate_s < nowdate_s -%}
+                  {% assign release_flg = 1 %}
+                {%- else -%}
+                  {% assign release_flg = 0 %}
+                {%- endif -%}
+              {%- else -%}
+                {% assign release_flg = 1 %}
+              {%- endif -%}
+
+
+              <p>{{ release_flg }}</p>
 
                 {% render 'product-card',
                   product_card_product: product,

@@ -25,7 +25,7 @@
 
 {{ release_flg }}
 
-{%- if release_flg > 0 -%}
+{%- if release_flg <= 0 -%}
 
 <a href="{{ product_card_product.url | default: '#' }}" class="card -center -halfround">
   {%- if show_vendor -%}

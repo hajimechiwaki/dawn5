@@ -40,7 +40,7 @@
           <div class="cols cards -has4" id="product-grid" data-id="{{ section.id }}">
             {%- for product in collection.products -%}
 
-  {% assign releasedate = product.metafields.mitosaya_fields.release_date %}
+  {% assign releasedate = product_card_product.metafields.mitosaya_fields.release_date %}
   hoge:{{ releasedate }}
   {%- if releasedate != blank -%}
     {% assign releasedate_s = product.metafields.mitosaya_fields.release_date | date: '%s' %}

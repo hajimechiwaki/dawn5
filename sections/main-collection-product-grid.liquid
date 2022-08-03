@@ -55,7 +55,7 @@
               {%- endif -%}
 
 
-              <p>{{ release_flg }}</p>
+              {%- if release_flg <= 0 -%}
 
                 {% render 'product-card',
                   product_card_product: product,
@@ -66,6 +66,9 @@
                   show_image_outline: section.settings.show_image_outline,
                   show_rating: section.settings.show_rating
                 %}
+
+              {%- endif -%}
+              
             {%- endfor -%}
           </div>
         </div>

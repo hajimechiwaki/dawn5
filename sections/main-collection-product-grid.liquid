@@ -13,7 +13,7 @@
 
 
 
-{{ collection | json }}
+{{ collection.products | json }}
 
   {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}

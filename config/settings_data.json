@@ -108,9 +108,9 @@
           "announcement-bar-0": {
             "type": "announcement",
             "settings": {
-              "text": "Recruit \/ スタッフ募集（8月15日まで）",
+              "text": "",
               "color_scheme": "background-1",
-              "link": "https:\/\/mitosaya.com\/pages\/recruit"
+              "link": ""
             }
           }
         },

@@ -1618,13 +1618,13 @@ header-drawer {
   height: 6rem;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-size: 1.5rem;
   color: #121212;
   letter-spacing: .1rem;
   line-height: calc(1 + .2 / var(--font-body-scale));
   background-color: transparent;
-  border: 0.1rem solid rgba(83,72,65,0);
+  border: 0.1rem solid #534841;
 }
 
 .product__tax {

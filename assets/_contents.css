@@ -1591,8 +1591,6 @@ header-drawer {
 }
 
 .product_information .price {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;

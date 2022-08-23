@@ -1623,10 +1623,8 @@ header-drawer {
   color: #121212;
   letter-spacing: .1rem;
   line-height: calc(1 + .2 / var(--font-body-scale));
-  background-color: rgba(var(--color-button), var(--alpha-button-background));
-  border-radius: var(--buttons-radius-outset);
-  -webkit-box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
-  box-shadow: var(--shadow-horizontal-offset) var(--shadow-vertical-offset) var(--shadow-blur-radius) rgba(var(--color-shadow), var(--shadow-opacity));
+  background-color: transparent;
+  border: 0.1rem solid rgba(83,72,65,0);
 }
 
 .product__tax {

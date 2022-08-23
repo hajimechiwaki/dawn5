@@ -1604,6 +1604,14 @@ header-drawer {
   margin-left: 1rem;
 }
 
+.product_information_buy_ghost {
+  max-width: 29.5rem;
+  height: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
 .product__tax {
   text-align: center;
   margin-top: .8rem;

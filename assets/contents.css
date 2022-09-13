@@ -1315,7 +1315,7 @@ header-drawer {
 
 #ProductGridContainer {
   position: relative;
-  z-index: 1;
+  z-index: 4;
 }
 
 .spaced-section {

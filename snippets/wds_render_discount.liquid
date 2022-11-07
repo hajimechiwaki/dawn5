@@ -9,10 +9,12 @@
  	{% when 'wds_price_max'%}{{ wds_temp_price[7] }}
  	{% when 'wds_apply_discount'%}{{- wds_temp_price[8] -}}
  	{% when 'wds_apply_tag'%}{{- wds_temp_price[9] -}}
+    {% when 'wds_discount_group_key'%}{{- wds_temp_price[10] -}}
 {% endcase %}{% comment %}
 
 {% capture wds_discount %}{%render 'wds_discount_calculation' with  wds_product:product, mode:'product', method:'render' %}{% endcapture %}
 
+{%- capture wds_discount_group_key -%}{%- render 'wds_render_discount' , wds_discount:wds_discount, price_variable:'wds_discount_group_key' -%}{%- endcapture -%}
 
 {%- capture wds_price -%}{%- render 'wds_render_discount' , wds_discount:wds_discount, price_variable:'wds_price' -%}{%- endcapture -%}
 {% assign  wds_price = wds_price | minus: 0 %}

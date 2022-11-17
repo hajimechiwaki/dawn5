@@ -1308,15 +1308,15 @@ header-drawer {
   border: none;
 }
 
-#main-collection-filters {
+/* #main-collection-filters {
   position: relative;
   z-index: 2;
-}
+} */
 
-#ProductGridContainer {
+/* #ProductGridContainer {
   position: relative;
   z-index: 4;
-}
+} */
 
 .spaced-section {
   margin-top: 0rem;

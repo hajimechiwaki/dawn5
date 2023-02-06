@@ -108,6 +108,14 @@
       <h2>{{ 'customer.account.details' | t }}</h2>
 
       {{ customer.default_address | format_address }}
+<!-- Seal Subscriptions auto installation start -->
+{% if routes.root_url.last == "/" %}
+	<p><a href="{{ routes.root_url }}a/subscriptions/">Subscriptions</a></p>
+{% else %}
+	<p><a href="{{ routes.root_url }}/a/subscriptions/">Subscriptions</a></p>
+{% endif %}
+<!-- Seal Subscriptions auto installation end -->
+
 
       <a href="{{ routes.account_addresses_url }}">
         {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})

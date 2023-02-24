@@ -196,14 +196,14 @@
 
    endif 
 -%}
-  {%  capture wds_tiered_product_discount_json %}{% render 'wds_tiered_price_product' with wds_tiered_product:wds_product %}{% endcapture %}
-   {%- capture wds_product_json -%}{"id":{{- wds_product.id | json -}},"title":{{- wds_product.title | json -}},"handle":{{- wds_product.handle | json -}},"description":{{- wds_product.description | json -}},"published_at":"{{- wds_product.published_at | date: "%FT%T%:z" -}}","created_at":"{{- wds_product.created_at | date: "%FT%T%:z" -}}","vendor":{{- wds_product.vendor | json -}},"type":{{- wds_product.type | json -}},"tags":{{- wds_product.tags | json -}},"price":{{- wds_price | floor | json -}},"price_min":{{- wds_price_min | json -}},"price_max":{{- wds_price_max | json -}},"available":{{- wds_product.available | json -}},"price_varies":{{- wds_product.price_varies | json -}},"compare_at_price": {{- wds_compare_at_price | json -}},"compare_at_price_min": {{- wds_compare_at_price_min | json -}},"compare_at_price_max": {{- wds_compare_at_price_max | json -}},"compare_at_price_varies":{{- wds_product.compare_at_price_varies | json -}},"variants":{{- wds_variants_json -}},"images": {{- wds_product.images | json -}},"featured_image":{{- wds_product.featured_image | json -}},"options":{{- wds_product.options | json -}},"media":{{- wds_product.media | json -}},"tiered_price":{{- wds_tiered_product_discount_json |json -}},"content":{{- wds_product.content | json -}}}{%- endcapture wds_product_json -%}
+  {%  capture wds_tiered_product_discount_json %}{% render 'wds_tiered_price_product' with wds_discount_group_key:wds_discount_group_key, wds_tiered_product:wds_product %}{% endcapture %}
+   {%- capture wds_product_json -%}{"id":{{- wds_product.id | json -}},"title":{{- wds_product.title | json -}},"handle":{{- wds_product.handle | json -}},"description":{{- wds_product.description | json -}},"published_at":"{{- wds_product.published_at | date: "%FT%T%:z" -}}","created_at":"{{- wds_product.created_at | date: "%FT%T%:z" -}}","vendor":{{- wds_product.vendor | json -}},"type":{{- wds_product.type | json -}},"tags":{{- wds_product.tags | json -}},"price":{{- wds_price | floor | json -}},"price_min":{{- wds_price_min | json -}},"price_max":{{- wds_price_max | json -}},"available":{{- wds_product.available | json -}},"price_varies":{{- wds_product.price_varies | json -}},"compare_at_price": {{- wds_compare_at_price | json -}},"compare_at_price_min": {{- wds_compare_at_price_min | json -}},"compare_at_price_max": {{- wds_compare_at_price_max | json -}},"compare_at_price_varies":{{- wds_product.compare_at_price_varies | json -}},"variants":{{- wds_variants_json -}},"images": {{- wds_product.images | json -}},"featured_image":{{- wds_product.featured_image | json -}},"options_with_values":{{- wds_product.options_with_values |json -}},"options":{{- wds_product.options | json -}},"media":{{- wds_product.media | json -}},"tiered_price":{{- wds_tiered_product_discount_json |json -}},"content":{{- wds_product.content | json -}}}{%- endcapture wds_product_json -%}
    {% if method == 'variant' %}
        {{- wds_variants_json -}}
    {% else %}
        {{-wds_product_json-}}
    {% endif %}
-
+   
 {% endif %}
 
 {% if mode == 'product' or mode == 'all'  %}

@@ -42,6 +42,12 @@
           "settings": {
           }
         },
+        "38aa155a-15e6-4f12-b934-ce5c06449f07": {
+          "type": "shopify:\/\/apps\/seal-subscriptions-loyalty\/blocks\/subscription-widget\/13b25004-a140-4ab7-b5fe-29918f759699",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -115,12 +121,6 @@
           "settings": {
             "share_label": "Share"
           }
-        },
-        "38aa155a-15e6-4f12-b934-ce5c06449f07": {
-          "type": "shopify:\/\/apps\/seal-subscriptions-loyalty\/blocks\/subscription-widget\/13b25004-a140-4ab7-b5fe-29918f759699",
-          "settings": {
-            "product": "{{product}}"
-          }
         }
       },
       "block_order": [
@@ -128,6 +128,7 @@
         "variant_picker",
         "price",
         "quantity_selector",
+        "38aa155a-15e6-4f12-b934-ce5c06449f07",
         "buy_buttons",
         "vendor",
         "title",
@@ -136,8 +137,7 @@
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share",
-        "38aa155a-15e6-4f12-b934-ce5c06449f07"
+        "share"
       ],
       "settings": {
         "enable_sticky_info": true,

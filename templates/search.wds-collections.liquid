@@ -16,6 +16,7 @@
 ],
 "settings":{{shop.metafields.wds.settings.value | json}},
 "translations":{{shop.metafields.wds.translations.value | json}}
+,"save_cart":{{ shop.metafields.wds.saveCartTranslations.value | json }}  
 ,"net_btn_label":{{ shop.metafields.wds.net_terms.value.btn_label  | json}}
 {% if customer and  customer_tags contains 'wds-net-terms'  and  shop.metafields.wds.net_terms.value.is_enabled == 1 %}
 ,"net_terms":true

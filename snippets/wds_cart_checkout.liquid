@@ -73,25 +73,6 @@
     endfor
   -%}
 
-  {% liquid
-    assign wdsLoginTag = 'wdsLogin'
-    assign wdsNonLoginTag = 'wdsNonLogin'
-    assign customer_tags = customer.tags | downcase
-    assign wds_custom_customer_tag = wdsNonLoginTag | downcase
-    if customer
-      assign wds_custom_customer_tag = wdsLoginTag | downcase
-    endif
-    assign is_wds_customer = false
-    assign customer_tags = customer.tags | downcase
-    for wds_discount_value in shop.metafields.wds.wds_enable_groups.value
-      assign wds_discount_value_tag = wds_discount_value.tag | downcase
-
-      if customer_tags contains wds_discount_value_tag or wds_custom_customer_tag == wds_discount_value_tag
-        assign is_wds_customer = true
-      endif
-    endfor
-  -%}
-
   {% if is_wds_customer == true %}
     {% if template == 'cart' %}
       <div id="wds-cart-page-modal" class="wds-cart-page-modal">

@@ -109,7 +109,7 @@
             "type": "announcement",
             "disabled": true,
             "settings": {
-              "text": "New Products Shop Now",
+              "text": "New Products, Shop Now",
               "color_scheme": "accent-1",
               "link": "https:\/\/mitosaya.com\/collections\/new-arrival"
             }

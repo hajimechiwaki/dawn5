@@ -107,15 +107,15 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "New Products, Shop Now",
+              "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
               "link": "https:\/\/mitosaya.com\/collections\/new-arrival"
             }
           },
           "da8b053b-43cd-4818-a123-9ff8d5b8d762": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "5\/20,21 OPEN DAY ― Tickets On Sale",
               "color_scheme": "accent-1",

@@ -72,7 +72,15 @@
       endif
     endfor
   -%}
-
+  {% if canonical_url contains "/apps/wholesale" %}
+{% if is_wds_customer == true %}
+    	{% if cart.currency.iso_code != shop.currency %}
+    		<script>
+      			window.location.href=window.location.href+"?currency={{shop.currency}}";
+    		</script>
+    	{% endif %}
+{% endif %}
+    {% endif %}
   {% if is_wds_customer == true %}
     {% if template == 'cart' %}
       <div id="wds-cart-page-modal" class="wds-cart-page-modal">

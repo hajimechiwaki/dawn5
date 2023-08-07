@@ -3,7 +3,7 @@
     "16552723563216a654": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"content vi\">\n\t<div class=\"content_bg\">\n\t\t<video preload=\"none\" data-autoplay loop playsinline muted class=\"lazyload bgimg\">\n\t\t<source type=\"video\/mp4\" src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0552\/1044\/2922\/files\/mitosaya_movie_ver2_20220529.mp4?v=1653799825\">\n\t\t<\/video>\n\t<\/div>\n\t<div class=\"content_inner\">\n\t\t\t<h1 class=\"vi_title -center\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0552\/1044\/2922\/files\/logotype_fff.svg?v=1634783331\" alt=\"MITOSAYA\"><\/h1>\n\t<\/div>\n<\/div>",
+        "custom_liquid": "<div class=\"content vi\">\n\t<div class=\"content_bg\">\n\t\t<video preload=\"none\" data-autoplay loop playsinline muted class=\"lazyload bgimg\">\n\t\t<source type=\"video\/mp4\" src=\"https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/5b386d6f553f45679a38763db66749d7.mp4\">\n\t\t<\/video>\n\t<\/div>\n\t<div class=\"content_inner\">\n\t\t\t<h1 class=\"vi_title -center\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0552\/1044\/2922\/files\/logotype_fff.svg?v=1634783331\" alt=\"MITOSAYA\"><\/h1>\n\t<\/div>\n<\/div>",
         "color_scheme": "background-1",
         "padding_top": 0,
         "padding_bottom": 0

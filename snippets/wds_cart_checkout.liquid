@@ -389,7 +389,33 @@
                     xhr.onerror = function() {};{% endif %}
 
                 }
-                {% if template == 'cart' %}cart_page_validation();
+                {% if template == 'cart' %}
+                
+
+                  window.wds_orignal_items_count={{cart.item_count }};            
+                  function cart_item_validation() {
+                    let xhr_cart_check = new XMLHttpRequest();
+                    xhr_cart_check.responseType = 'json';
+                    xhr_cart_check.open('GET', '/cart.js');
+                    xhr_cart_check.send();
+                    xhr_cart_check.onload = function() {
+                      if (xhr_cart_check.status != 200) {
+                        setTimeout(cart_item_validation(), 5000);
+                      } else {
+                        let  wds_cart_check_object = xhr_cart_check.response;
+                        if(window.wds_orignal_items_count != wds_cart_check_object.item_count ){
+                          window.wds_orignal_items_count = parseInt(JSON.stringify(wds_cart_check_object.item_count));
+                          setTimeout(cart_item_validation(), 5000);
+                          cart_page_validation();
+                        }else{
+                          setTimeout(cart_item_validation(), 5000);
+                        }
+                      }
+                    }
+                  }  
+
+                cart_item_validation();
+                cart_page_validation();
 
 
 

@@ -147,7 +147,7 @@
             {%- if wds_v_price > variant.price  -%}
                {%- assign wds_v_price = variant.price -%}
             {%- endif -%}
-            {%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enable == 1 %}
+            {%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enabled == 1 %}
                 {% assign wds_v_min_price = 99999999999999999999999999999999999999999 %}
                 {% assign wds_fix_price= shop.metafields.wds_fix_price.wds_fix_1.value | where: "p_id", wds_product.id %}
                 {%  assign variant_id = variant.id | append: "" %}
@@ -341,7 +341,7 @@
 -%}
 
 
-{%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enable == 1 %}
+{%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enabled == 1 %}
   
     {% assign wds_v_min_price = 99999999999999999999999999999999999999999 %} 
     {% assign wds_v_max_price = wds_price_max %} 
@@ -424,7 +424,7 @@
         assign wds_v_price = wds_v_price | floor   
 -%}
   
-{%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enable == 1 %}
+{%  if customer and shop.metafields.wds.wds_fix_price_settings.value.is_enabled == 1 %}
     {% assign wds_v_min_price = 99999999999999999999999999999999999999999 %}
     {% assign wds_fix_price= shop.metafields.wds_fix_price.wds_fix_1.value | where: "p_id", wds_product.id %}
     {%  assign variant_id = wds_variant.id | append: "" %}

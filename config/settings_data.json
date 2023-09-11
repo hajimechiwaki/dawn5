@@ -107,7 +107,6 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
@@ -125,6 +124,7 @@
           },
           "78d9797e-ca05-4a6d-bdaf-b1af43110b60": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "9\/2 MITOSAYA to MIYOTA",
               "color_scheme": "accent-1",

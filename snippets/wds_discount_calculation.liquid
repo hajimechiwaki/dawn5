@@ -179,6 +179,9 @@
        {%- endfor -%}
    ]
    {%- endcapture wds_variants_json -%}
+   {% if wds_price_min > wds_price_min_temp  %}
+     {% assign wds_price_min = wds_price_min_temp %}
+   {% endif %}
    {%- assign wds_variants_json = wds_variants_json | remove_first: "," -%}
    {%- assign wds_price = wds_product.price -%}
    {%- assign wds_compare_at_price = wds_product.compare_at_price -%}

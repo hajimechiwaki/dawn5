@@ -1,4 +1,18 @@
 {% if shop.metafields.wds.settings.value.is_enable == 1 %}
+
+   <style>.wds_checkout_loader {
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}</style>
   <script>
   window.wds_view_cart = function wds_view_cart(e){
   e.disabled = true;
@@ -177,8 +191,40 @@
                 wds_jq('body').on('click', ".wds_checkout_btn,#dvPaypal, #dvAmazon, input[name='checkout'], button[name='checkout'], [href$='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], .additional-checkout-button, .google-wallet-button-holder, .amazon-payments-pay-button", function(event) {
                   event.preventDefault();
                   wds_jq(this).attr('disabled', 'disabled');
+                  wds_jq(this).html('<div class="wds_checkout_loader"><span></span></div>');
                   wds_get_cart();
                 });
+                window.wds_invoice_url_ready=false;
+                function wds_redirect_to_checkout(wds_url){
+                  if(window.wds_invoice_url_ready==true){
+                     window.top.location.href = wds_url
+                  }else{
+                  
+                  let wds_check_url_xhr = new XMLHttpRequest();
+                  wds_check_url_xhr.responseType = 'json';
+                  wds_check_url_xhr.open('GET', wds_url);
+                  wds_check_url_xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+                  wds_check_url_xhr.send();
+                  wds_check_url_xhr.onload = function() {
+                    if (wds_check_url_xhr.status != 200) {
+                      setTimeout(function(){
+                          wds_redirect_to_checkout(wds_url) 
+                        },1000);
+                    }else{
+                       if (wds_check_url_xhr.status == 200) { 
+                          window.wds_invoice_url_ready=true;
+                          window.top.location.href = wds_url
+                      } else{
+                          setTimeout(function(){
+                          
+                          wds_redirect_to_checkout(wds_url) 
+                        },1000);
+                      }
+                    }
+                }
+                  }
+                 
+                }
                 function wds_checkout(wds_check_cart_object) {
                   wds_check_cart_object.permanent_domain = {{ shop.permanent_domain | json }}
                   let apiURL = wds_request_url + 'store-front/checkout/draft/'
@@ -192,7 +238,7 @@
                       window.top.location.href = '/checkout'
                     } else {
                       if (xhr.response.is_error == false) {
-                        window.top.location.href = xhr.response.checkoutUrl
+                        wds_redirect_to_checkout(xhr.response.checkoutUrl);
                       } else {
                         window.top.location.href = '/checkout'
                       }
@@ -400,15 +446,22 @@
                     xhr_cart_check.send();
                     xhr_cart_check.onload = function() {
                       if (xhr_cart_check.status != 200) {
-                        setTimeout(cart_item_validation(), 5000);
+                        setTimeout(function(){
+                          cart_item_validation()
+                        }, 1000);
+                        
                       } else {
                         let  wds_cart_check_object = xhr_cart_check.response;
                         if(window.wds_orignal_items_count != wds_cart_check_object.item_count ){
                           window.wds_orignal_items_count = parseInt(JSON.stringify(wds_cart_check_object.item_count));
-                          setTimeout(cart_item_validation(), 5000);
+                          setTimeout(function(){
+                            cart_item_validation()
+                          }, 1000);
                           cart_page_validation();
                         }else{
-                          setTimeout(cart_item_validation(), 5000);
+                          setTimeout(function(){
+                            cart_item_validation()
+                          },1000);
                         }
                       }
                     }

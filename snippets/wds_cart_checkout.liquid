@@ -1,18 +1,4 @@
 {% if shop.metafields.wds.settings.value.is_enable == 1 %}
-
-   <style>.wds_checkout_loader {
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  animation: spin 2s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}</style>
   <script>
   window.wds_view_cart = function wds_view_cart(e){
   e.disabled = true;
@@ -191,7 +177,6 @@
                 wds_jq('body').on('click', ".wds_checkout_btn,#dvPaypal, #dvAmazon, input[name='checkout'], button[name='checkout'], [href$='checkout'], input[name='goto_pp'], button[name='goto_pp'], input[name='goto_gc'], button[name='goto_gc'], .additional-checkout-button, .google-wallet-button-holder, .amazon-payments-pay-button", function(event) {
                   event.preventDefault();
                   wds_jq(this).attr('disabled', 'disabled');
-                  wds_jq(this).html('<div class="wds_checkout_loader"><span></span></div>');
                   wds_get_cart();
                 });
                 window.wds_invoice_url_ready=false;
@@ -222,10 +207,13 @@
                       }
                     }
                 }
-                  }
+                  } 
                  
                 }
                 function wds_checkout(wds_check_cart_object) {
+                  
+                  wds_check_cart_object.cart_extra_attribute = get_attribute();
+
                   wds_check_cart_object.permanent_domain = {{ shop.permanent_domain | json }}
                   let apiURL = wds_request_url + 'store-front/checkout/draft/'
                   let xhr = new XMLHttpRequest();
@@ -250,6 +238,37 @@
                 }
 
                 window.wds_check_cart_object = [];
+                function get_attribute(){
+                 
+                  var wds_noteAttributes   = {};
+                  window.wds_jq("[name^='attributes']").each(function() {
+                    var attribute = window.wds_jq(this);
+                    var name = window.wds_jq(this).attr("name");
+                    name = name.replace(/^attributes\[/i, "").replace(/\]$/i, "");
+                    var v = {
+                      name: name,
+                      value: attribute.val()
+                    };
+                    if (v.value == "") {
+                      return
+                    }
+                    switch (attribute[0].tagName.toLowerCase()) {
+                      case "input":
+                        if (attribute.attr("type") == "checkbox") {
+                          if (attribute.is(":checked")) {
+                            wds_noteAttributes[v.name]=v.value
+                          }
+                        } else {
+                           wds_noteAttributes[v.name]=v.value
+                        }
+                        break;
+                      default:
+                         wds_noteAttributes[v.name]=v.value
+                    }
+                  });
+
+                  return wds_noteAttributes;
+                }
 
                 function wds_check_cart(wds_cart_object) {
 
@@ -260,7 +279,8 @@
 
                   wds_cart_object.cart.items = wds_cart_object.wds_items;
                   wds_cart_object.wds_items = [];
-
+                 
+                  
                   if (wds_cart_object.isLoginCustomer) {
                     if (wds_cart_object.customer.tags == null) {
                       wds_cart_object.customer.tags = [];
@@ -272,6 +292,8 @@
                     }
                     wds_cart_object.customer.tags.push('wdsNonLogin');
                   }
+
+                  
 
                   let apiURL = wds_request_url + 'store-front/discount-calculations'
                   let xhr = new XMLHttpRequest();

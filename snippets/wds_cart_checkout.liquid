@@ -101,6 +101,11 @@
 {% endif %}
    {% endif %}
  {% if is_wds_customer == true %}
+    <style>
+  .dynamic-checkout__content, .additional-checkout-buttons{
+  display:none !important
+ }
+  </style>
    {% if template == 'cart' %}
      <div id="wds-cart-page-modal" class="wds-cart-page-modal">
        <div class="wds-cart-page-modal-content">

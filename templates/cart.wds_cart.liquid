@@ -42,7 +42,7 @@
  	{% if customer_tags contains temp_wds_apply_tag or temp_wds_apply_tag == wds_custom_customer_tag  %}
       
 		{% assign wds_customer = true %}
-        {
+        
 	{% endif %}  
    	{% if wds_v_price > item.final_price %}   
     	{% assign wds_v_price = item.final_price %}

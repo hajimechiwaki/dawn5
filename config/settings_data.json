@@ -218,7 +218,15 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "1850493961649900144": {
+        "type": "shopify:\/\/apps\/appointly-booking\/blocks\/main-app-embed\/17a520a2-4844-483a-826a-11cb5dd0370d",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   },
   "presets": {
     "Default": {

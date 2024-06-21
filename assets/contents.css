@@ -1907,6 +1907,10 @@ html[lang=en] *[data-lang=en] {
   width: 100vw !important;
 }
 
+#team-member-container {
+  display: none;
+}
+
 @media screen and (min-width: 481px) {
   body {
     min-width: 1200px;

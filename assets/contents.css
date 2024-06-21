@@ -1904,7 +1904,7 @@ html[lang=en] *[data-lang=en] {
 }
 
 .menu-drawer {
-  width: 100vw;
+  width: 100vw !important;
 }
 
 @media screen and (min-width: 481px) {

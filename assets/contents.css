@@ -1903,6 +1903,10 @@ html[lang=en] *[data-lang=en] {
   padding-left: 3rem;
 }
 
+.menu-drawer {
+  width: 100vw;
+}
+
 @media screen and (min-width: 481px) {
   body {
     min-width: 1200px;

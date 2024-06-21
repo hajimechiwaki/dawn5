@@ -1891,7 +1891,7 @@ html[lang=en] *[data-lang=en] {
   display: block;
 }
 
-.list-menu--disclosure {
+.list-menu .list-menu--disclosure {
   width: 37.5rem;
 }
 

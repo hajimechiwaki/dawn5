@@ -1895,6 +1895,10 @@ html[lang=en] *[data-lang=en] {
   width: 37.5rem;
 }
 
+.header__submenu .header__menu-item {
+  padding: .8rem 2rem;
+}
+
 @media screen and (min-width: 481px) {
   body {
     min-width: 1200px;

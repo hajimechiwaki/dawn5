@@ -1,3 +1,12 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
 {
   "current": {
     "colors_solid_button_labels": "#534841",
@@ -107,6 +116,7 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
@@ -124,11 +134,10 @@
           },
           "78d9797e-ca05-4a6d-bdaf-b1af43110b60": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
-              "text": "9\/2 MITOSAYA to MIYOTA",
+              "text": "[EVENT]  7\/13,14  Yayacoshiya \/ ややこしや",
               "color_scheme": "accent-1",
-              "link": "https:\/\/mitosaya.com\/blogs\/news\/20230827-mitosaya-to-miyota"
+              "link": "https:\/\/mitosaya.com\/blogs\/news\/20240607-yayacoshiya"
             }
           }
         },

@@ -1907,8 +1907,8 @@ html[lang=en] *[data-lang=en] {
   width: 100vw !important;
 }
 
-#team-member-container {
-  display: none;
+#shopify-section-header {
+  z-index: 5;
 }
 
 @media screen and (min-width: 481px) {

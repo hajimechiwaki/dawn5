@@ -116,7 +116,6 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
@@ -125,6 +124,7 @@
           },
           "da8b053b-43cd-4818-a123-9ff8d5b8d762": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "[event] 8\/10,11  MITOSAYA POP UP AT CHISE (HOKKAIDO)",
               "color_scheme": "accent-1",

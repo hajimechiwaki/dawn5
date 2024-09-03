@@ -130,11 +130,29 @@
               "color_scheme": "accent-1",
               "link": "shopify:\/\/blogs\/news\/20240725-mitosaya-pop-up-at-chise"
             }
+          },
+          "announcement_BPVxwi": {
+            "type": "announcement",
+            "settings": {
+              "text": "10\/12-14 てのさや - 秋の恵みを楽しむ会",
+              "color_scheme": "accent-1",
+              "link": "https:\/\/mitosaya.com\/blogs\/news\/20240903-tenosaya"
+            }
+          },
+          "announcement_WPr7H4": {
+            "type": "announcement",
+            "settings": {
+              "text": "Welcome to our store",
+              "color_scheme": "accent-1",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "announcement-bar-0",
-          "da8b053b-43cd-4818-a123-9ff8d5b8d762"
+          "da8b053b-43cd-4818-a123-9ff8d5b8d762",
+          "announcement_BPVxwi",
+          "announcement_WPr7H4"
         ],
         "settings": {
         }

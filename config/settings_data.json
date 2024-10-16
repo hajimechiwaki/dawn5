@@ -1,12 +1,12 @@
 /*
-* ------------------------------------------------------------
-* IMPORTANT: The contents of this file are auto-generated.
-*
-* This file may be updated by the Shopify admin theme editor
-* or related systems. Please exercise caution as any changes
-* made to this file may be overwritten.
-* ------------------------------------------------------------
-*/
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
     "colors_solid_button_labels": "#534841",
@@ -92,10 +92,10 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
     "accent_icons": "text",
-    "social_twitter_link": "https:\/\/twitter.com\/3tosaya",
-    "social_facebook_link": "https:\/\/www.facebook.com\/3tosaya\/",
+    "social_twitter_link": "https://twitter.com/3tosaya",
+    "social_facebook_link": "https://www.facebook.com/3tosaya/",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/www.instagram.com\/3tosaya\/",
+    "social_instagram_link": "https://www.instagram.com/3tosaya/",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -104,7 +104,7 @@
     "predictive_search_enabled": true,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": true,
-    "favicon": "shopify:\/\/shop_images\/mitosaya_favicon.png",
+    "favicon": "shopify://shop_images/mitosaya_favicon.png",
     "currency_code_enabled": false,
     "cart_type": "notification",
     "show_cart_note": true,
@@ -120,24 +120,25 @@
             "settings": {
               "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
-              "link": "https:\/\/mitosaya.com\/collections\/new-arrival"
+              "link": "https://mitosaya.com/collections/new-arrival"
             }
           },
           "da8b053b-43cd-4818-a123-9ff8d5b8d762": {
             "type": "announcement",
             "disabled": true,
             "settings": {
-              "text": "[event] 8\/10,11  MITOSAYA POP UP AT CHISE (HOKKAIDO)",
+              "text": "[event] 8/10,11  MITOSAYA POP UP AT CHISE (HOKKAIDO)",
               "color_scheme": "accent-1",
-              "link": "shopify:\/\/blogs\/news\/20240725-mitosaya-pop-up-at-chise"
+              "link": "shopify://blogs/news/20240725-mitosaya-pop-up-at-chise"
             }
           },
           "announcement_BPVxwi": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
-              "text": "10\/12-14 てのさや - 秋の恵みを楽しむ会",
+              "text": "10/12-14 てのさや - 秋の恵みを楽しむ会",
               "color_scheme": "accent-1",
-              "link": "https:\/\/mitosaya.com\/blogs\/news\/20240903-tenosaya"
+              "link": "https://mitosaya.com/blogs/news/20240903-tenosaya"
             }
           },
           "announcement_WPr7H4": {
@@ -148,13 +149,22 @@
               "color_scheme": "accent-1",
               "link": ""
             }
+          },
+          "announcement_bJTjWz": {
+            "type": "announcement",
+            "settings": {
+              "text": "October Event at mitosaya",
+              "color_scheme": "accent-1",
+              "link": "https://mitosaya.com/blogs/news/202410-schecdule-mitosaya-can-pany"
+            }
           }
         },
         "block_order": [
           "announcement-bar-0",
           "da8b053b-43cd-4818-a123-9ff8d5b8d762",
           "announcement_BPVxwi",
-          "announcement_WPr7H4"
+          "announcement_WPr7H4",
+          "announcement_bJTjWz"
         ],
         "settings": {
         }
@@ -163,7 +173,7 @@
         "type": "header",
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify:\/\/shop_images\/mitosaya_logo_b65d6b7d-ec35-4fb2-a53f-a759158aead4.png",
+          "logo": "shopify://shop_images/mitosaya_logo_b65d6b7d-ec35-4fb2-a53f-a759158aead4.png",
           "logo_width": 90,
           "logo_position": "middle-left",
           "menu": "main-menu",
@@ -199,7 +209,7 @@
             "disabled": true,
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
             }
           }
         },
@@ -240,7 +250,7 @@
     ],
     "blocks": {
       "1850493961649900144": {
-        "type": "shopify:\/\/apps\/appointly-booking\/blocks\/main-app-embed\/17a520a2-4844-483a-826a-11cb5dd0370d",
+        "type": "shopify://apps/appointly-booking/blocks/main-app-embed/17a520a2-4844-483a-826a-11cb5dd0370d",
         "disabled": false,
         "settings": {
         }
@@ -397,7 +407,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
               }
             }
           },

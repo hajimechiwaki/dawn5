@@ -153,9 +153,9 @@
           "announcement_bJTjWz": {
             "type": "announcement",
             "settings": {
-              "text": "October Event at mitosaya",
+              "text": "November in MITOSAYA",
               "color_scheme": "accent-1",
-              "link": "https://mitosaya.com/blogs/news/202410-schecdule-mitosaya-can-pany"
+              "link": "https://mitosaya.com/blogs/news/202411-calendar"
             }
           }
         },
@@ -166,8 +166,7 @@
           "announcement_WPr7H4",
           "announcement_bJTjWz"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "header": {
         "type": "header",
@@ -245,15 +244,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "1850493961649900144": {
         "type": "shopify://apps/appointly-booking/blocks/main-app-embed/17a520a2-4844-483a-826a-11cb5dd0370d",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   },
@@ -371,8 +367,7 @@
           "block_order": [
             "announcement-bar-0"
           ],
-          "settings": {
-          }
+          "settings": {}
         },
         "header": {
           "type": "header",

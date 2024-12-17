@@ -116,7 +116,6 @@
         "blocks": {
           "announcement-bar-0": {
             "type": "announcement",
-            "disabled": true,
             "settings": {
               "text": "New Products -  Shop Now",
               "color_scheme": "accent-1",
@@ -152,6 +151,7 @@
           },
           "announcement_bJTjWz": {
             "type": "announcement",
+            "disabled": true,
             "settings": {
               "text": "November in MITOSAYA",
               "color_scheme": "accent-1",

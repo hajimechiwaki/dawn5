@@ -30,7 +30,11 @@
       "tags": {{ customer.tags | json }},
       "default_address": {{ customer.default_address | json }},
 	  "addresses" :{{ customer.addresses | json }},
+  {% if customer %}
       "total_spent" : {{ customer.total_spent }}
+{% else %}
+      "total_spent" : 0
+  {% endif %}
 },
 "wds_items" :[
      
@@ -39,9 +43,9 @@
 	{% include 'wds_discount_calculation' with wds_product:item.product, wds_variant:item.variant, mode:'variant' %}
     {% include 'wds_tiered_price' with item %}
 	{% assign temp_wds_apply_tag = wds_apply_tag | downcase %}
- 	{% if customer_tags contains temp_wds_apply_tag or temp_wds_apply_tag == wds_custom_customer_tag  %}
+ 	{% if customer_tags contains temp_wds_apply_tag or temp_wds_apply_tag == wds_custom_customer_tag %}
       
-		{% assign wds_customer = true %}
+	{% assign wds_customer = true %}
         
 	{% endif %}  
    	{% if wds_v_price > item.final_price %}   

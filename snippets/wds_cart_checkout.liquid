@@ -1,8 +1,13 @@
 {% if shop.metafields.wds.settings.value.is_enable == 1 %}
   <style>
- 
  .wds-cart-level-discount{
- color:green
+ color:green;
+ }
+    .wds-discount-code-discount{
+      color:black;
+    }
+ .shopify-payment-button{
+  display: none !important;
  }
  
  .wds_checkout_loader {
@@ -19,6 +24,7 @@
  100% { transform: rotate(360deg); }
 }</style>
  <script>
+   window.wds_timer_for_checkout=5000;
  window.wds_view_cart = function wds_view_cart(e){
  e.disabled = true;
  window.top.location.href = '/apps/wholesale/save/cart';
@@ -92,6 +98,11 @@
    endfor
  -%}
  {% if canonical_url contains "/apps/wholesale" %}
+   <style>
+     a[href^='/search']{ display: none !important }
+     a[href^='/cart']{ display: none !important }
+     a[href^='/checkout']{ display: none !important }
+     </style>
 {% if is_wds_customer == true %}
      {% if cart.currency.iso_code != shop.currency %}
        <script>
@@ -100,13 +111,42 @@
      {% endif %}
 {% endif %}
    {% endif %}
+      {% if customer_tags contains "wds-net-terms" %}
+
+        {% if  is_wds_customer == false %}
+<style>
+  .wds_update_cart,.wds_checkout_btn {
+    display:none !important;
+  }
+  </style>
+        {% endif %}
+
+        {% assign is_wds_customer = true %}
+     
+{% endif %}
+  
  {% if is_wds_customer == true %}
+   <style>
+     a[href^='/checkout']{ display: none !important }
+     </style>
     <style>
   .dynamic-checkout__content, .additional-checkout-buttons{
   display:none !important
  }
   </style>
    {% if template == 'cart' %}
+
+
+     
+     
+    {% if is_wds_customer == true %}
+      {% if cart.currency.iso_code != shop.currency %}
+        <script>
+            window.location.href=window.location.href+"?currency={{shop.currency}}";
+        </script>
+      {% endif %}
+ {% endif %}
+ 
      <div id="wds-cart-page-modal" class="wds-cart-page-modal">
        <div class="wds-cart-page-modal-content">
          <div class="wds-cart-page-modal-header">
@@ -206,6 +246,10 @@
                });
                window.wds_invoice_url_ready=false;
                function wds_redirect_to_checkout(wds_url){
+                   setTimeout(function(){
+                          window.top.location.href = wds_url
+                       },window.wds_timer_for_checkout);
+                 
                  if(window.wds_invoice_url_ready==true){
                     window.top.location.href = wds_url
                  }else{
@@ -297,7 +341,6 @@
 
                function wds_check_cart(wds_cart_object) {
 
-
                  if (wds_cart_object.wds_customer == false) {
                    return false;
                  }
@@ -317,6 +360,10 @@
                    wds_cart_object.customer.tags.push('wdsNonLogin');
                  }
 
+                 if(window.wds_jq('#wds_discount_code').length == 1){
+                   wds_cart_object.code=window.wds_jq('#wds_discount_code').val();
+                 }
+                 
                  let apiURL = wds_request_url + 'store-front/discount-calculations'
                  let xhr = new XMLHttpRequest();
                  xhr.responseType = 'json';
@@ -328,10 +375,7 @@
                    if (xhr.status != 200) {
                      console.log('error');
                    } else {
-                     
                      window.wds_check_cart_object = xhr.response;
-
-
                      if (xhr.response.is_min_requirements_satisfied == false) {
                        window.top.location.href = '/checkout'
                      } else {
@@ -379,7 +423,7 @@
 
 
 
-               function cart_page_validation() {
+            window.cart_page_validation =   function cart_page_validation() {
 
                  {% if template == 'cart' %}
 
@@ -410,6 +454,9 @@
                            }
                            response.customer.tags.push('wdsNonLogin');
                          }
+                          if(window.wds_jq('#wds_discount_code').length == 1){
+                              response.code=window.wds_jq('#wds_discount_code').val();
+                          }
 
                          let apiURL = wds_request_url + 'store-front/discount-calculations'
                          let xhrCheckCart = new XMLHttpRequest();
@@ -426,6 +473,13 @@
                              window.wds_jq('.wds_discounted_total_price_money').html('');
                              window.wds_jq('.wds-cart-page-modal-body').html('');
 
+                             if (xhrCheckCart.response.show_discount_code == true) {
+                               try{
+                                 window.wds_jq('.wds_discount_code').show();
+                               }catch(e){
+                                 console.log("discount code error")
+                               }
+                             }
                              if (xhrCheckCart.response.is_min_requirements_satisfied == false) {
 
                                window.wds_jq('.wds-cart-page-modal-body').html('<div>' + xhrCheckCart.response.minimums_note + '</div>');
@@ -467,8 +521,17 @@
                                    window.wds_jq('.wds_discounted_total_price_money').html(xhrCheckCart.response.currency+" "+ xhrCheckCart.response.wds_total);
                                    window.wds_jq('.wds-cart-page-modal-body').append('<div class="wds-cart-level-discount"><span>' + xhrCheckCart.response.cart_level_discount_item_html + '</span></div>');
                                  }
-                                 
+                                }
+                               
+                                if(xhrCheckCart.response.discount_item_html != ''){
+                                     window.wds_jq('.wds-cart-page-modal-body').append('<div class="wds-discount-code-discount"><span>' + xhrCheckCart.response.discount_item_html + '</span></div>');
+                                }
+
+                               if(xhrCheckCart.response.apply_discount_code == true)
+                               {
+                                  window.wds_jq('.wds_discounted_total_price_money').html(xhrCheckCart.response.currency+" "+ xhrCheckCart.response.wds_total);
                                }
+                               
                                var wds_modal = document.getElementById("wds-cart-page-modal");
                                wds_modal.style.display = "block";
                              }
@@ -521,7 +584,7 @@
 
                cart_item_validation();
                cart_page_validation();
-
+             
 
 
      // Get the modal
@@ -532,7 +595,7 @@
                  wds_update_cart.onclick = function() {
                    cart_page_validation();
                  }
-
+                 
                  var wds_wholesale_section_cart = document.getElementsByClassName("wds_wholesale_section_cart")[0];
 
                  wds_wholesale_section_cart.onclick = function() {
@@ -558,6 +621,7 @@
    </script>
 
    {% if template == 'cart' %}
+    
      <style>
        .wds-cart-page-modal {
          display: none;
